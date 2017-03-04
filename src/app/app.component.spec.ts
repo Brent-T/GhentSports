@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { SportsOverviewComponent } from './sports-overview/sports-overview.component';
+
 describe('App', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({ declarations: [AppComponent]});
