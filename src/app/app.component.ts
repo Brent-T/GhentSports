@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { SportsOverviewComponent } from './sports-overview/sports-overview.component';
+// import { SportsOverviewComponent } from './sports-overview/sports-overview.component';
 
 @Component({
 	selector: 'my-app',
