@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Sport } from '../../models/sport';
 
 @Component({
 	selector: 'sports-overview',
@@ -6,4 +7,19 @@ import { Component } from '@angular/core';
 	styleUrls: ['./sports-overview.component.scss']
 })
 
-export class SportsOverviewComponent { }
+export class SportsOverviewComponent {
+	sports: Sport[] = [];
+
+	constructor() {
+		this.sports = [
+			new Sport('Football', require('../../assets/icons/football.png')),
+			new Sport('Basketball', require('../../assets/icons/basketball.png')),
+			new Sport('Running', require('../../assets/icons/running.png')),
+			new Sport('Ping-pong', require('../../assets/icons/ping-pong.png')),
+			new Sport('Football', require('../../assets/icons/football.png')),
+			new Sport('Basketball', require('../../assets/icons/basketball.png')),
+			new Sport('Running', require('../../assets/icons/running.png')),
+			new Sport('Ping-pong', require('../../assets/icons/ping-pong.png')),
+		];
+	}
+}
