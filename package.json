@@ -1,13 +1,4 @@
 {
-  "name": "angular2-webpack",
-  "version": "1.0.0",
-  "description": "A webpack starter for Angular",
-  "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8080",
-    "test": "karma start",
-    "build": "node ./node_modules/rimraf/bin.js dist && webpack --config config/webpack.prod.js --progress --profile --bail"
-  },
-  "license": "MIT",
   "dependencies": {
     "@angular/common": "~2.4.0",
     "@angular/compiler": "~2.4.0",
@@ -48,5 +39,15 @@
     "webpack": "2.2.1",
     "webpack-dev-server": "2.4.1",
     "webpack-merge": "^3.0.0"
-  }
+  },
+  "description": "A webpack starter for Angular",
+  "license": "MIT",
+  "name": "angular2-webpack",
+  "scripts": {
+    "build": "node ./node_modules/rimraf/bin.js dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "lint": "tslint ./src/**/*.ts -t verbose",
+    "start": "webpack-dev-server --inline --progress --port 8080",
+    "test": "karma start",
+  },
+  "version": "1.0.0"
 }
