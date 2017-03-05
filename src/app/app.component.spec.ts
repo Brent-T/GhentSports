@@ -4,7 +4,7 @@ import { SportsOverviewComponent } from './sports-overview/sports-overview.compo
 
 describe('App', () => {
 	beforeEach(() => {
-		TestBed.configureTestingModule({ declarations: [AppComponent]});
+		TestBed.configureTestingModule({ declarations: [AppComponent, SportsOverviewComponent]});
 	});
 	it ('should work', () => {
 		let fixture = TestBed.createComponent(AppComponent);
