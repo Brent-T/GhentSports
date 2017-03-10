@@ -1,0 +1,9 @@
+sport-item {
+	float: left;
+	width: 30%;
+	margin-right: 4%;
+}
+
+sport-item:nth-child(3n+0) {
+	margin-right: 0;
+}	
