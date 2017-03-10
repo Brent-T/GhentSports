@@ -14,5 +14,7 @@ test:
 deployment:
   staging:
     branch: master
+    commands:
+      - npm run build
     heroku:
       appname: ghentsports
