@@ -7,7 +7,7 @@ import { Sport } from '../../models/sport';
 	styleUrls: ['./sports-overview.component.scss']
 })
 
-export class SportsOverviewComponent {
+export class SportsOverview {
 	sports: Sport[] = [];
 
 	constructor() {
