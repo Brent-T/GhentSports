@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ParksService } from './../../services/parks.service';
+import { Xml2JsonService } from './../../services/xml2json.service';
 import { Park } from './../../models/park';
 
 @Component({
 	selector: 'sport-detail',
 	templateUrl: './sport-detail.component.html',
 	styleUrls: ['./sport-detail.component.scss'],
-	providers: [ParksService]
+	providers: [ParksService, Xml2JsonService]
 })
 
 export class SportDetail implements OnInit {
@@ -23,7 +24,6 @@ export class SportDetail implements OnInit {
 		});	
 
 		this.parksService.getParks().then((parks:Park[]) => {
-			console.log(parks);
 			this.parks = parks;			
 		});
 	}
