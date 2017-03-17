@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Sport } from '../../models/sport';
+import { SportCategory } from '../../models/enums';
 
 @Component({
 	selector: 'sports-overview',

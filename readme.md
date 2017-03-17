@@ -29,6 +29,7 @@ npm start
 
 All data used in this project originates from [data.stad.gent](https://data.stad.gent/)
 
-- [Parken](https://data.stad.gent/datasets/parken) - Running
-- [Buurtsport locaties](https://data.stad.gent/datasets/buurtsport-locaties) - Football, ping-pong, ...
+- ~~[Parken](https://data.stad.gent/datasets/parken) - Running~~
+- [Looproutes](https://data.stad.gent/data/263) - Running
+- [Buurtsport locaties](https://data.stad.gent/data/51) - Football, ping-pong, ...
 - [Sportcentra](https://data.stad.gent/datasets/sportcentra) - Swimming, ...

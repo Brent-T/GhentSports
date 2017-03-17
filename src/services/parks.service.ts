@@ -7,7 +7,7 @@ import { Park } from './../models/park';
 
 @Injectable()
 export class ParksService {
-	private parksUrl = 'https://datatank.stad.gent/4/milieuennatuur/parken.xml';
+	private parksUrl: string = 'https://datatank.stad.gent/4/milieuennatuur/parken.xml';
 
 	constructor(private http: Http, private xml2json: Xml2JsonService) {}
 
