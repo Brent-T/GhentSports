@@ -16,11 +16,11 @@ export class SportsOverview {
 			new Sport('Football', require('../../assets/icons/football.png')),
 			new Sport('Basketball', require('../../assets/icons/basketball.png')),
 			new Sport('Running', require('../../assets/icons/running.png')),
-			new Sport('Ping-pong', require('../../assets/icons/ping-pong.png')),
+			new Sport('Pingpong', require('../../assets/icons/pingpong.png')),
 			new Sport('Football', require('../../assets/icons/football.png')),
 			new Sport('Basketball', require('../../assets/icons/basketball.png')),
 			new Sport('Running', require('../../assets/icons/running.png')),
-			new Sport('Ping-pong', require('../../assets/icons/ping-pong.png')),
+			new Sport('Pingpong', require('../../assets/icons/pingpong.png')),
 		];
 	}
 }

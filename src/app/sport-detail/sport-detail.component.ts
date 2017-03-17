@@ -5,6 +5,7 @@ import { ParksService } from './../../services/parks.service';
 import { BuurtsportLocatiesService } from './../../services/buurtsportlocaties.service';
 import { Xml2JsonService } from './../../services/xml2json.service';
 import { Park } from './../../models/park';
+import { Location } from './../../models/location';
 
 @Component({
 	selector: 'sport-detail',
@@ -29,8 +30,9 @@ export class SportDetail implements OnInit {
 		// 	this.parks = parks;
 		// });
 
-		this.buursportLocatieService.getBuursportLocaties('').then((locations:Object[]) => {
+		this.buursportLocatieService.getBuursportLocaties('Basketbal').then((locations:Location[]) => {
 			this.locations = locations;
+			console.log(locations);
 		});
 	}
 }
