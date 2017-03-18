@@ -11,7 +11,7 @@ export class SportsService {
 		new Sport(3, 'Running', require('./../assets/icons/running.png'), SportCategory.Running),
 		new Sport(4, 'Pingpong', require('./../assets/icons/pingpong.png'), SportCategory.Pingpong),
 		new Sport(5, 'Fitness', require('./../assets/icons/fitness.png'), SportCategory.Fitness),
-		new Sport(6, 'Skateboard', require('./../assets/icons/skate.png'), SportCategory.Skate),
+		new Sport(6, 'Skate', require('./../assets/icons/skate.png'), SportCategory.Skate),
 		new Sport(7, 'Volleyball', require('./../assets/icons/volleyball.png'), SportCategory.Volleyball),
 	];;
 
