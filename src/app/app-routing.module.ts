@@ -7,7 +7,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
 	{ path: 'sports', component: SportsOverview },
-	{ path: 'sport/:name', component: SportDetail },
+	{ path: 'sport/:id', component: SportDetail },
 	{ 
 		path: '', 
 		redirectTo: '/sports',

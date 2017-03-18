@@ -5,7 +5,8 @@ export enum SportCategory {
 	Pingpong,
 	Fitness,
 	Skate,
-	Volleyball
+	Volleyball,
+	Null // Only for testing purpose
 }
 
 export const enums = {
