@@ -30,7 +30,6 @@ export class SportDetail implements OnInit {
 		this.route.params.subscribe(params => {
 			const id = +params['id'];
 			this.sport = this.sportsService.getSport(id);
-			console.log('test', this.sport);
 			this.getLocations();
 		});	
 	}
