@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+import { SportCategory } from './../models/enums';
 import { Location } from './../models/location';
 
 @Injectable()
@@ -10,7 +11,8 @@ export class BuurtsportLocatiesService {
 
 	constructor(private http: Http) {}
 
-	getBuursportLocaties(filter: string): Promise<Location[]> {
+	getBuursportLocaties(sport: SportCategory): Promise<Location[]> {
+		const filter = this.getFilter(sport);
 		return this.http.get(this.apiUrl)
 						.toPromise()
 						.then(response => {
@@ -19,6 +21,19 @@ export class BuurtsportLocatiesService {
 										   .map((f: any) => this.convertToLocation(f));
 						})
 						.catch(this.handleError);
+	}
+
+	getFilter(sport: SportCategory): string {
+		switch (sport) {
+			case SportCategory.Basketball:
+				return 'Basketbal';
+			case SportCategory.Pingpong:
+				return 'Pingpong';
+			case SportCategory.Football:
+				return 'Buurtvoetbal';
+			default:
+				return '';
+		}
 	}
 
 	convertToLocation(json: any): Location {
