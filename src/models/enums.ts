@@ -2,7 +2,7 @@ export enum SportCategory {
 	Football,
 	Basketball,
 	Running,
-	PingPong,
+	Pingpong,
 }
 
 export const enums = {
