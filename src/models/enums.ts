@@ -4,7 +4,7 @@ export enum SportCategory {
 	Running,
 	Pingpong,
 	Fitness,
-	Skateboard,
+	Skate,
 	Volleyball
 }
 

@@ -18,7 +18,7 @@ export class SportsOverview {
 			new Sport('Running', require('../../assets/icons/running.png'), SportCategory.Running),
 			new Sport('Pingpong', require('../../assets/icons/pingpong.png'), SportCategory.Pingpong),
 			new Sport('Fitness', require('../../assets/icons/fitness.png'), SportCategory.Fitness),
-			new Sport('Skateboard', require('../../assets/icons/skateboard.png'), SportCategory.Skateboard),
+			new Sport('Skateboard', require('../../assets/icons/skate.png'), SportCategory.Skate),
 			new Sport('Volleyball', require('../../assets/icons/volleyball.png'), SportCategory.Volleyball),
 		];
 	}

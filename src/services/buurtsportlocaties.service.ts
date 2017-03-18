@@ -31,6 +31,12 @@ export class BuurtsportLocatiesService {
 				return 'Pingpong';
 			case SportCategory.Football:
 				return 'Buurtvoetbal';
+			case SportCategory.Fitness:
+				return 'Fitnesstoestellen';
+			case SportCategory.Skate:
+				return 'Skate';
+			case SportCategory.Volleyball:
+				return 'Volleybal';
 			default:
 				return '';
 		}
@@ -54,6 +60,12 @@ export class BuurtsportLocatiesService {
 				return SportCategory.Pingpong;
 			case 'Buurtvoetbal':
 				return SportCategory.Football;
+			case 'Fitnesstoestellen':
+				return SportCategory.Fitness;
+			case 'Skate':
+				return SportCategory.Skate;
+			case 'Volleybal':
+				return SportCategory.Volleyball;
 		}
 	}
 
