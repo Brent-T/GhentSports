@@ -18,11 +18,12 @@ export class SportLocationService {
 				return this.loopRoutesService.getLoopRoutes();
 			case SportCategory.Basketball:
 			case SportCategory.Football:
-			case SportCategory.Pingpong:
+			// case SportCategory.Pingpong:
 				return this.buursportLocatieService.getBuursportLocaties(sport);
+			case SportCategory.Pingpong:
+				return this.parksService.getParks();
 			default:
-				// return this.parksService.getParks();
-				return null;
+				return this.parksService.getParks();
 		}
 	}
 }

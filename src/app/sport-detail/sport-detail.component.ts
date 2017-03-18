@@ -19,9 +19,8 @@ import { Location } from './../../models/location';
 })
 
 export class SportDetail implements OnInit {
-	name:string = '';
-	// parks:Park[];
-	locations: Object[];
+	name: string = '';
+	locations: Location[];
 
 	constructor(private route: ActivatedRoute,  private sportLocationsSerivce: SportLocationService, private parksService: ParksService, private buursportLocatieService: BuurtsportLocatiesService, private loopRoutesService: LoopRoutesService) {}
 
@@ -30,8 +29,9 @@ export class SportDetail implements OnInit {
 			this.name = params['name'];
 		});	
 
-		this.sportLocationsSerivce.getLocations(SportCategory.Football).then((data:any) => {
+		this.sportLocationsSerivce.getLocations(SportCategory.Football).then((data: Location[]) => {
+			this.locations = data;
 			console.log('response', data);
-		})
+		});
 	}
 }

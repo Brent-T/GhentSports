@@ -39,9 +39,22 @@ export class BuurtsportLocatiesService {
 	convertToLocation(json: any): Location {
 		const id = json.id;	
 		const name = json.properties.Naam;	
-		const sport = json.properties.Sport;	
+		const sport = this.getSportCategory(json.properties.Sport);
 		const coordinates = json.geometry.coordinates;
-		return new Location(id, name, sport, { lat: coordinates[1], long: coordinates[0] });
+		const lat = coordinates[1];
+		const long = coordinates[0];
+		return new Location(id, name, sport, { lat, long });
+	}
+
+	getSportCategory(sport: string): SportCategory {
+		switch(sport) {
+			case 'Basketbal':
+				return SportCategory.Basketball;
+			case 'Pingpong':
+				return SportCategory.Pingpong;
+			case 'Buurtvoetbal':
+				return SportCategory.Football;
+		}
 	}
 
 	handleError(error: any) {

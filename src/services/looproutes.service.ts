@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+import { SportCategory } from './../models/enums';
 import { Location } from './../models/location';
 
 @Injectable()
@@ -14,7 +15,7 @@ export class LoopRoutesService {
 		return this.http.get(this.apiUrl)
 						.toPromise()
 						.then(response => {
-							console.log(response.json());
+							// console.log(response.json());
 							return response.json()
 										   .map((lr: any) => this.convertToLocation(lr));
 						})
@@ -24,7 +25,7 @@ export class LoopRoutesService {
 	convertToLocation(json: any): Location {
 		const id = json.id;	
 		const name = json.name.split('_')[0];	
-		const sport = 'Running';	
+		const sport = SportCategory.Running;	
 		const length = json.length;
 		const polyline = json.line_google;
 		return new Location(id, name, sport, { length, polyline });
