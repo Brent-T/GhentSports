@@ -17,10 +17,9 @@ export class SportsOverview {
 			new Sport('Basketball', require('../../assets/icons/basketball.png'), SportCategory.Basketball),
 			new Sport('Running', require('../../assets/icons/running.png'), SportCategory.Running),
 			new Sport('Pingpong', require('../../assets/icons/pingpong.png'), SportCategory.Pingpong),
-			new Sport('Football', require('../../assets/icons/football.png'), SportCategory.Football),
-			new Sport('Basketball', require('../../assets/icons/basketball.png'), SportCategory.Basketball),
-			new Sport('Running', require('../../assets/icons/running.png'), SportCategory.Running),
-			new Sport('Pingpong', require('../../assets/icons/pingpong.png'), SportCategory.Pingpong),
+			new Sport('Fitness', require('../../assets/icons/fitness.png'), SportCategory.Fitness),
+			new Sport('Skateboard', require('../../assets/icons/skateboard.png'), SportCategory.Skateboard),
+			new Sport('Volleyball', require('../../assets/icons/volleyball.png'), SportCategory.Volleyball),
 		];
 	}
 }
