@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ParksService } from './../../services/parks.service';
 import { BuurtsportLocatiesService } from './../../services/buurtsportlocaties.service';
+import { LoopRoutesService } from './../../services/looproutes.service';
 import { Xml2JsonService } from './../../services/xml2json.service';
 import { Park } from './../../models/park';
 import { Location } from './../../models/location';
@@ -11,7 +12,7 @@ import { Location } from './../../models/location';
 	selector: 'sport-detail',
 	templateUrl: './sport-detail.component.html',
 	styleUrls: ['./sport-detail.component.scss'],
-	providers: [ParksService, BuurtsportLocatiesService, Xml2JsonService]
+	providers: [ParksService, BuurtsportLocatiesService, LoopRoutesService, Xml2JsonService]
 })
 
 export class SportDetail implements OnInit {
@@ -19,7 +20,7 @@ export class SportDetail implements OnInit {
 	// parks:Park[];
 	locations: Object[];
 
-	constructor(private route: ActivatedRoute, private parksService: ParksService, private buursportLocatieService: BuurtsportLocatiesService) {}
+	constructor(private route: ActivatedRoute, private parksService: ParksService, private buursportLocatieService: BuurtsportLocatiesService, private loopRoutesService: LoopRoutesService) {}
 
 	ngOnInit() {
 		this.route.params.subscribe(params => {
@@ -30,9 +31,13 @@ export class SportDetail implements OnInit {
 		// 	this.parks = parks;
 		// });
 
-		this.buursportLocatieService.getBuursportLocaties('Basketbal').then((locations:Location[]) => {
-			this.locations = locations;
-			console.log(locations);
+		// this.buursportLocatieService.getBuursportLocaties('Basketbal').then((locations:Location[]) => {
+		// 	this.locations = locations;
+		// 	console.log(locations);
+		// });
+
+		this.loopRoutesService.getLoopRoutes().then((looproutes: any) => {
+			console.log('response', looproutes);
 		});
 	}
 }
