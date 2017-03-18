@@ -26,6 +26,7 @@ export class SportDetail implements OnInit {
 
 	ngOnInit() {
 		this.route.params.subscribe(params => {
+			console.log(params);
 			this.name = params['name'];
 		});	
 

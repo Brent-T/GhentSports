@@ -1,25 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { SportsService } from './../../services/sports.service';
+
 import { Sport } from '../../models/sport';
 import { SportCategory } from '../../models/enums';
 
 @Component({
 	selector: 'sports-overview',
 	templateUrl: './sports-overview.component.html',
-	styleUrls: ['./sports-overview.component.scss']
+	styleUrls: ['./sports-overview.component.scss'],
+	providers: [SportsService]
 })
 
-export class SportsOverview {
+export class SportsOverview implements OnInit {
 	sports: Sport[] = [];
 
-	constructor() {
-		this.sports = [
-			new Sport('Football', require('../../assets/icons/football.png'), SportCategory.Football),
-			new Sport('Basketball', require('../../assets/icons/basketball.png'), SportCategory.Basketball),
-			new Sport('Running', require('../../assets/icons/running.png'), SportCategory.Running),
-			new Sport('Pingpong', require('../../assets/icons/pingpong.png'), SportCategory.Pingpong),
-			new Sport('Fitness', require('../../assets/icons/fitness.png'), SportCategory.Fitness),
-			new Sport('Skateboard', require('../../assets/icons/skate.png'), SportCategory.Skate),
-			new Sport('Volleyball', require('../../assets/icons/volleyball.png'), SportCategory.Volleyball),
-		];
+	constructor(private sportsService: SportsService) { }
+
+	ngOnInit() {
+		this.sports = this.sportsService.getSports();
 	}
 }
