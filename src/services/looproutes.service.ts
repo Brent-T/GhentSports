@@ -15,7 +15,6 @@ export class LoopRoutesService {
 		return this.http.get(this.apiUrl)
 						.toPromise()
 						.then(response => {
-							// console.log(response.json());
 							return response.json()
 										   .map((lr: any) => this.convertToLocation(lr));
 						})

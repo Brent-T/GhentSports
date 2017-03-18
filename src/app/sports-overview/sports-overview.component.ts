@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { SportsService } from './../../services/sports.service';
 
 import { Sport } from '../../models/sport';
-import { SportCategory } from '../../models/enums';
 
 @Component({
 	selector: 'sports-overview',
@@ -15,7 +14,7 @@ import { SportCategory } from '../../models/enums';
 export class SportsOverview implements OnInit {
 	sports: Sport[] = [];
 
-	constructor(private sportsService: SportsService) { }
+	constructor(private sportsService: SportsService) {}
 
 	ngOnInit() {
 		this.sports = this.sportsService.getSports();

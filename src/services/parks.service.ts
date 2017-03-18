@@ -3,8 +3,8 @@ import { Http, Headers,RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Xml2JsonService } from './xml2json.service';
+
 import { SportCategory } from './../models/enums';
-import { Park } from './../models/park';
 import { Location } from './../models/location';
 
 @Injectable()

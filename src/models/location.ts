@@ -6,6 +6,6 @@ export class Location implements ILocation {
 		public id: string,
 		public name: string,
 		public sport: SportCategory,
-		public maps: any
+		public geo: any
 	) {}
 }
