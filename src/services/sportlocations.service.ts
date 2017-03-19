@@ -21,12 +21,10 @@ export class SportLocationService {
 			case SportCategory.Pingpong:
 			case SportCategory.Fitness:
 			case SportCategory.Skate:
-			// case SportCategory.Volleyball:
-				return this.buurtsportLocatieService.getBuursportLocaties(sport);
 			case SportCategory.Volleyball:
+				return this.buurtsportLocatieService.getBuursportLocaties(sport);
+			default:
 				return this.parksService.getParks();
-			// default:
-			// 	return this.parksService.getParks();
 		}
 	}
 }
