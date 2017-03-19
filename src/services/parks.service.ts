@@ -18,13 +18,7 @@ export class ParksService {
 		return this.http.get(this.parksUrl, { headers: headers })
 						.toPromise()
 						.then(response => {
-							const reponse_json = this.convertResponseToJSON(response.text());					
-							const placemark = reponse_json['kml']['Document']['Folder']['Placemark'];
-							const parks = placemark.map((data:any) => {
-								let park = {};
-								data['ExtendedData']['SchemaData']['SimpleData'].forEach((a:any) => park[a['@attributes'].name.toLowerCase()] = a['#text']);
-								return park;
-							});
+							const parks = this.convertResponseToJSON(response.text());
 							return parks.map((p: any) => this.convertToLocation(p));
 						})
 						.catch(this.handleError);
@@ -33,7 +27,13 @@ export class ParksService {
 	convertResponseToJSON(response:string) {
 		const parser = new DOMParser();
 		const xml = parser.parseFromString(response, "text/xml");
-		return this.xml2json.convert(xml);		
+		const json = this.xml2json.convert(xml); 
+		const placemark = json['kml']['Document']['Folder']['Placemark'];
+		return placemark.map((data:any) => {
+			let park = {};
+			data['ExtendedData']['SchemaData']['SimpleData'].forEach((a:any) => park[a['@attributes'].name.toLowerCase()] = a['#text']);
+			return park;
+		});		
 	}
 
 	convertToLocation(json: any): Location {
