@@ -25,9 +25,14 @@ export class ParksService {
 	}
 
 	convertResponseToJSON(response:string) {
+		// String -> XML
 		const parser = new DOMParser();
 		const xml = parser.parseFromString(response, "text/xml");
+
+		// XML -> JSON
 		const json = this.xml2json.convert(xml); 
+
+		// Return json properties
 		const placemark = json['kml']['Document']['Folder']['Placemark'];
 		return placemark.map((data:any) => {
 			let park = {};
