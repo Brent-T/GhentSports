@@ -2,7 +2,7 @@
 
 <div style="text-align:center; margin: 30px auto;"><img src="assets/icon.png" alt="Medal icon" /></div>
 
-Find the best spots in Ghent to work out, have a quick run or improve your football skills.
+Find the best spots in Ghent to work out, have a run or exercise.
 
 This is a school project created for the course Web & Mobile development.
 
