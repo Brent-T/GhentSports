@@ -2,14 +2,14 @@
 var testing_1 = require('@angular/core/testing');
 var app_component_1 = require('./app.component');
 var testing_2 = require('@angular/router/testing');
-describe('App', function () {
-    beforeEach(function () {
+describe('App', () => {
+    beforeEach(() => {
         testing_1.TestBed.configureTestingModule({
             declarations: [app_component_1.AppComponent],
             imports: [testing_2.RouterTestingModule]
         });
     });
-    it('should work', function () {
+    it('should work', () => {
         var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
         expect(fixture.componentInstance instanceof app_component_1.AppComponent).toBe(true, 'should create AppComponent');
     });
