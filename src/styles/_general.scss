@@ -12,6 +12,7 @@
 body {
 	font-family: $t_font-family_default;
     font-size: $t_font-size_medium;
+    font-weight: $t_font-weight_normal;
 	text-align: center;
     line-height: $t_line-height_default;
     background-color: $c_blue_normal;
@@ -19,9 +20,9 @@ body {
 }
 
 h1 {
-    font-size: $t_font-size_xlarge;
+    font-size: $t_font-size_xxlarge;
 }
 
 footer {
-    font-size: 1.3rem;
+    font-size: $t_font-size_smaller;
 }
