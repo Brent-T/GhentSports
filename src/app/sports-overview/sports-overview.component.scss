@@ -1,9 +1,11 @@
-sport-item {
-	float: left;
-	width: 30%;
-	margin-right: 4%;
-}
+:host {
+	.sportItem__container {
 
-sport-item:nth-child(3n+0) {
-	margin-right: 0;
-}	
+	}
+
+	sport-item {
+		display: inline-block;
+		width: 30%;
+		margin: 1.5%;
+	}
+}
