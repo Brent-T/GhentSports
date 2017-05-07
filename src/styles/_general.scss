@@ -3,15 +3,23 @@
  *  -------------------------
  */
 
+@import 'partials/variables';
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-size: 1.6rem;
-    line-height: 1.5;
-    background: #0147A7;
-    color: #FFF;
+	font-family: $t_font-family_default;
+    font-size: $t_font-size_medium;
+	text-align: center;
+    line-height: $t_line-height_default;
+    background-color: $c_blue_normal;
+    color: $c_white;
+}
+
+h1 {
+    font-size: $t_font-size_xlarge;
 }
 
 footer {
