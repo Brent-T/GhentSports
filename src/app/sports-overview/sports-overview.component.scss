@@ -1,5 +1,11 @@
-sport-item {
-	display: inline-block;
-	width: 30%;
-	margin: 1.5%;
+:host {
+	.overview__title {
+		margin-bottom: 25px;
+	}
+
+	sport-item {
+		display: inline-block;
+		width: 30%;
+		margin: 1.5%;
+	}
 }

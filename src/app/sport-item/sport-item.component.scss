@@ -3,8 +3,9 @@
 :host {
 	display: block;
 	padding: 1.5rem 0rem;
-	border: 1px solid white;
-	border-radius: 10px;
+	color: $c_gray_dark;
+	background-color: $c_white;
+    box-shadow: 1px 1px 10px #333;
 
 	.sportItem__title {
 		font-size: $t_font-size_large;
@@ -12,7 +13,7 @@
 	}
 
 	.sportItem__img {
-		max-height: 100px;
+		max-height: 120px;
 		display: block;
 		margin: 10px auto;
 	}
