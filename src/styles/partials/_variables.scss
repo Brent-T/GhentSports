@@ -12,20 +12,21 @@ $c_blue_normal: #1976D2;
 $c_orange_normal: #FFA726;
 
 /* --- TYPOGRAPHY - FONT-FAMILY -- */
-$t_font-family_default: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+$t_font-family_default: 'Roboto', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
 /* --- TYPOGRAPHY - FONT-SIZE -- */
-$t_font-size_xxlarge: 22px;
-$t_font-size_xlarge: 18px;
-$t_font-size_large: 16px;
-$t_font-size_medium: 14px;
+$t_font-size_xxlarge: 28px;
+$t_font-size_xlarge: 24px;
+$t_font-size_large: 20px;
+$t_font-size_medium: 16px;
 $t_font-size_small: 12px;
 $t_font-size_smaller: 10px;
 
 /* --- TYPOGRAPHY - FONT-WEIGHT -- */
-$t_font-weight_bolder: 800;
-$t_font-weight_bold: 600;
-$t_font-weight_normal: 400;
+$t_font-weight_heavy: 900;
+$t_font-weight_bold: 700;
+$t_font-weight_medium: 500;
+$t_font-weight_light: 300;
 
 /* --- TYPOGRAPHY - LINE-HEIGHT -- */
 $t_line-height_default: 1.5;
