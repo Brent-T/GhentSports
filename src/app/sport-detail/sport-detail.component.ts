@@ -30,7 +30,7 @@ export class SportDetail implements OnInit {
 
 	getLocations() {
 		this.sportLocationsSerivce.getLocations(this.sport.cat).then((data: Location[]) => {
-			// this.locations = data;
+			this.locations = data;
 		});
 	}
 }
