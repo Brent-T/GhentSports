@@ -1,6 +1,7 @@
 <h1>{{ sport.name }}</h1>
 
-<ul>
-	<li *ngFor="let location of locations">{{ location.name }}</li>
+<ul class="locations__list">
+	<li class="locations__item" *ngFor="let location of locations">{{ location.name }}</li>
 </ul>
 
+<img class="spinner__img" *ngIf="locations.length === 0" src="{{ sport.icon }}" />

@@ -12,7 +12,7 @@ import { Sport } from '../../models/sport';
 })
 
 export class SportsOverview implements OnInit {
-	sports: Sport[] = [];
+	public sports: Sport[] = [];
 
 	constructor(private sportsService: SportsService) {}
 

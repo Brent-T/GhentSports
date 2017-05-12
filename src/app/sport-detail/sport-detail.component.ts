@@ -15,8 +15,8 @@ import { Location } from './../../models/location';
 })
 
 export class SportDetail implements OnInit {
-	sport: Sport;
-	locations: Location[];
+	public sport: Sport;
+	public locations: Location[] = [];
 
 	constructor(private route: ActivatedRoute, private sportsService: SportsService, private sportLocationsSerivce: SportLocationService) {}
 
@@ -25,12 +25,12 @@ export class SportDetail implements OnInit {
 			const id = +params['id'];
 			this.sport = this.sportsService.getSport(id);
 			this.getLocations();
-		});	
+		});
 	}
 
 	getLocations() {
 		this.sportLocationsSerivce.getLocations(this.sport.cat).then((data: Location[]) => {
-			this.locations = data;
+			// this.locations = data;
 		});
 	}
 }
