@@ -49,8 +49,8 @@
     "clean": "node ./node_modules/rimraf/bin.js dist",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "start": "npm run build && node deploy/server.js",
-    "start:prod": "npm run build && node deploy/server.js",
-    "start:dev": "webpack-dev-server --inline --progress --port 8080",
+    "start-prod": "npm run build && node deploy/server.js",
+    "start-dev": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start karma.conf.js"
   },
   "version": "1.0.0"
