@@ -20,12 +20,12 @@
 
 .button--primary {
 	color: $c_white;
-	background-color: $c_orange_normal;
+	background-color: $c_secondary;
 	border-color: $c_white;
 }
 
 .button--primary:hover {
-	color: $c_orange_normal;
+	color: $c_secondary;
 	background-color: $c_white;
-	border-color: $c_orange_normal;
+	border-color: $c_secondary;
 }
