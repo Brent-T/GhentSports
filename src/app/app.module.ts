@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
+import { FacebookModule } from 'ngx-facebook';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +22,8 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 	imports: [
 		AppRoutingModule,
 		BrowserModule,
-		HttpModule
+		HttpModule,
+		FacebookModule.forRoot()
 	],
 	declarations: [
 		AppComponent,
