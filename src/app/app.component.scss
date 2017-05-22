@@ -1,10 +1,10 @@
 @import '../styles/index';
 
-:host {
+my-app {
 	display: block;
 	max-width: 720px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 25px;
 
 	.test {
 		color: orange;
