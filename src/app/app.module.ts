@@ -33,6 +33,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		SportsOverview,
 		SportItem,
 		SportDetail,
+		Spinner,
 		PageNotFound
 	],
 	providers: [

@@ -4,4 +4,4 @@
 	<li class="locations__item" *ngFor="let location of locations">{{ location.name }}</li>
 </ul>
 
-<img class="spinner__img" *ngIf="locations.length === 0" src="{{ sport.icon }}" />
+<spinner *ngIf="locations.length === 0"></spinner>
