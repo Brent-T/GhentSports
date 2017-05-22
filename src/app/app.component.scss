@@ -1,7 +1,12 @@
 @import '../styles/index';
 
-main {
-    max-width: 720px;
-    margin: 0 auto;
+:host {
+	display: block;
+	max-width: 720px;
+	margin: 0 auto;
 	margin-top: 50px;
+
+	.test {
+		color: orange;
+	}
 }

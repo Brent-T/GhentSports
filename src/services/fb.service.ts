@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
-import { FacebookService, InitParams } from 'ngx-facebook';
+import { FacebookService, InitParams, LoginResponse } from 'ngx-facebook';
 
 @Injectable()
 export class FbService {
-	constructor(private fb: FacebookService) {
+	constructor(private facebookService: FacebookService) {
 		let initParams: InitParams = {
-			appId: '1234566778',
+			appId: '245676659169679',
 			xfbml: true,
-			version: 'v2.8'
+			version: 'v2.9'
 		};
 
-		fb.init(initParams);
+		facebookService.init(initParams);
+	}
+	
+	loginWithFacebook(): void {
+
+		this.facebookService.login()
+			.then((response: LoginResponse) => console.log(response))
+			.catch((error: any) => console.error(error));
+
 	}
 }

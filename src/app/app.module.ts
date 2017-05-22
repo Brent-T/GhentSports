@@ -13,6 +13,7 @@ import { BuurtsportLocatiesService } from './../services/buurtsportlocaties.serv
 import { ParksService } from './../services/parks.service';
 import { Xml2JsonService } from './../services/xml2json.service';
 
+import { AppHeader } from './app-header/app-header.component';
 import { SportsOverview } from './sports-overview/sports-overview.component';
 import { SportItem } from './sport-item/sport-item.component';
 import { SportDetail } from './sport-detail/sport-detail.component';
@@ -27,6 +28,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 	],
 	declarations: [
 		AppComponent,
+		AppHeader,
 		SportsOverview,
 		SportItem,
 		SportDetail,

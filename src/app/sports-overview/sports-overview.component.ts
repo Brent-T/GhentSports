@@ -14,7 +14,7 @@ import { Sport } from '../../models/sport';
 export class SportsOverview implements OnInit {
 	public sports: Sport[] = [];
 
-	constructor(private sportsService: SportsService) {}
+	constructor(private sportsService: SportsService) { }
 
 	ngOnInit() {
 		this.sports = this.sportsService.getSports();

@@ -18,7 +18,7 @@ export class SportDetail implements OnInit {
 	public sport: Sport;
 	public locations: Location[] = [];
 
-	constructor(private route: ActivatedRoute, private sportsService: SportsService, private sportLocationsSerivce: SportLocationService) {}
+	constructor(private route: ActivatedRoute, private sportsService: SportsService, private sportLocationsSerivce: SportLocationService) { }
 
 	ngOnInit() {
 		this.route.params.subscribe(params => {
