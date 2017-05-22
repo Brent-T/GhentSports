@@ -14,10 +14,12 @@ export class FbService {
 	}
 	
 	loginWithFacebook(): void {
-
 		this.facebookService.login()
 			.then((response: LoginResponse) => console.log(response))
-			.catch((error: any) => console.error(error));
+			.catch((error: any) => console.error(error));	
+	}
 
+	logoutWithFacebook(): void {
+		this.facebookService.logout().then(() => console.log('Logged out!'));
 	}
 }

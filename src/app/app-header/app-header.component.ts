@@ -15,4 +15,8 @@ export class AppHeader {
 	onLoginClick() {
 		this.fbService.loginWithFacebook();
 	}
+
+	onLogoutClick() {
+		this.fbService.logoutWithFacebook();
+	}
 }
