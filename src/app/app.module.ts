@@ -17,6 +17,7 @@ import { AppHeader } from './app-header/app-header.component';
 import { SportsOverview } from './sports-overview/sports-overview.component';
 import { SportItem } from './sport-item/sport-item.component';
 import { SportDetail } from './sport-detail/sport-detail.component';
+import { Spinner } from './spinner/spinner.component';
 import { PageNotFound } from './page-not-found/page-not-found.component';
 
 @NgModule({
