@@ -1,5 +1,43 @@
+@import './../../styles/partials/variables';
+
 :host {
 	display: block;
+	width: 95%;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 auto;
 	margin-bottom: 25px;
 	text-align: left;
+
+	.header__title {
+		float: left;
+	}
+
+	.header__loggedOut {
+		float: right;
+	}
+
+	.header__loggedIn {
+		float: right;
+
+		.header__profilePicture {
+			float: left;
+			height: 40px;
+			width: 40px;
+			margin-right: 10px;
+			border-radius: $d_border-radius_circle;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: auto;
+				min-height: 100%;
+			}
+		}
+
+		.header__username {
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
 }
