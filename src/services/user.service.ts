@@ -8,7 +8,6 @@ import { User } from './../models/user';
 @Injectable()
 export class UserService {
 	public user: BehaviorSubject<User> = new BehaviorSubject<User>(new User());
-	// private user: User;
 
 	constructor(private facebookService: FacebookService) {
 		let initParams: InitParams = {
