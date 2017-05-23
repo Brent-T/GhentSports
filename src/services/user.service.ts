@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { FacebookService, InitParams, LoginResponse, AuthResponse } from 'ngx-facebook';
-import { Subject } from 'rxjs/subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { User } from './../models/user';
