@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { UserService } from './../../services/user.service';
 
+import { User } from './../../models/user';
+
 @Component({
 	selector: 'app-header',
 	templateUrl: './app-header.component.html',
@@ -10,7 +12,14 @@ import { UserService } from './../../services/user.service';
 })
 
 export class AppHeader {
-	constructor(private userService: UserService) { }
+	public currentUser: User;
+
+	constructor(private userService: UserService) {
+		this.userService.user.subscribe((user) => {
+			console.log('update user', user);
+			this.currentUser = user;
+		});
+	}
 
 	onLoginClick() {
 		this.userService.loginWithFacebook();

@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FacebookService, InitParams, LoginResponse, AuthResponse } from 'ngx-facebook';
+import { Subject } from 'rxjs/subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { User } from './../models/user';
 
 @Injectable()
 export class UserService {
-	private user: User;
+	public user: Subject<User> = new BehaviorSubject<User>(new User());
+	// private user: User;
 
 	constructor(private facebookService: FacebookService) {
 		let initParams: InitParams = {
@@ -21,17 +23,14 @@ export class UserService {
 		this.facebookService.login()
 			.then((response: LoginResponse) => {
 				const userId = response.authResponse.userID;
-
 				Promise.all([
 					this.getUsername(userId),
 					this.getProfilePicture(userId),
 				]).then((response: any) => {
-					console.log(response);
-					this.user = new User(response[0].id, response[0].name, response[1].data.url);
-					console.log('user', this.user);
+					this.user.next(new User(response[0].id, response[0].name, response[1].data.url));
 				}).catch((error: any) => console.error(error));	
 			})
-			.catch((error: any) => console.error(error));	
+			.catch((error: any) => console.error(error));
 	}
 
 	getUsername(userId: string): Promise<any> {
@@ -44,9 +43,5 @@ export class UserService {
 
 	logoutWithFacebook(): void {
 		this.facebookService.logout().then(() => console.log('Logged out!'));
-	}
-
-	getUserInfo(): User {
-		return this.user;
 	}
 }
