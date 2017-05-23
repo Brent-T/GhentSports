@@ -1,5 +1,12 @@
 <h1 class="header__title">GhentSports</h1>
-<button class="button button--primary" (click)="onLoginClick()">Login</button>
-<button class="button button--primary" (click)="onLogoutClick()">Logout</button>
-<p>{{ currentUser.name }}</p>
-<img src="{{ currentUser.picture }}">
+
+<div class="header__loggedIn" *ngIf="userLoggedIn">
+	<p>{{ currentUser.name }}</p>
+	<img src="{{ currentUser.picture }}" />
+	<button class="button button--primary" (click)="onLogoutClick()">Logout</button>	
+</div>
+
+<div class="header__loggedOut" *ngIf="!userLoggedIn">
+	<button class="button button--primary" (click)="onLoginClick()">Login with Facebook</button>
+</div>
+

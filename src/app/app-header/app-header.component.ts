@@ -13,11 +13,13 @@ import { User } from './../../models/user';
 
 export class AppHeader {
 	public currentUser: User;
+	public userLoggedIn: boolean;
 
 	constructor(private userService: UserService) {
+		this.userLoggedIn = false;
 		this.userService.user.subscribe((user) => {
-			console.log('update user', user);
 			this.currentUser = user;
+			this.userLoggedIn = userService.userLoggedIn();
 		});
 	}
 

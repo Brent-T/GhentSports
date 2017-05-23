@@ -7,7 +7,7 @@ import { User } from './../models/user';
 
 @Injectable()
 export class UserService {
-	public user: Subject<User> = new BehaviorSubject<User>(new User());
+	public user: BehaviorSubject<User> = new BehaviorSubject<User>(new User());
 	// private user: User;
 
 	constructor(private facebookService: FacebookService) {
@@ -43,5 +43,10 @@ export class UserService {
 
 	logoutWithFacebook(): void {
 		this.facebookService.logout().then(() => this.user.next(new User()));
+	}
+
+	userLoggedIn(): boolean {
+		const user = this.user.value;
+		return !(user.id === '' || user.name === '' || user.picture === '');
 	}
 }
