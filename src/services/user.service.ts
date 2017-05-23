@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FacebookService, InitParams, LoginResponse, AuthResponse } from 'ngx-facebook';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { User } from './../models/user';
 
@@ -19,24 +20,26 @@ export class UserService {
 	loginWithFacebook(): void {
 		this.facebookService.login()
 			.then((response: LoginResponse) => {
-				this.user = new User();
-				this.user.id = response.authResponse.userID;
+				const userId = response.authResponse.userID;
 
-				// Get username
-				this.facebookService.api(`/${this.user.id}`)
-					.then((response: any) => {
-						console.log('name response', response);
-						this.user.name = response.name;
-					});
-
-				// Get profile picture
-				this.facebookService.api(`/${this.user.id}/picture`)
-					.then((response: any) => {
-						console.log('picture response', response);
-						this.user.picture = response.data.url;
-					});
+				Promise.all([
+					this.getUsername(userId),
+					this.getProfilePicture(userId),
+				]).then((response: any) => {
+					console.log(response);
+					this.user = new User(response[0].id, response[0].name, response[1].data.url);
+					console.log('user', this.user);
+				}).catch((error: any) => console.error(error));	
 			})
 			.catch((error: any) => console.error(error));	
+	}
+
+	getUsername(userId: string): Promise<any> {
+		return this.facebookService.api(`/${userId}`);
+	}
+
+	getProfilePicture(userId: string): Promise<any> {
+		return this.facebookService.api(`/${userId}/picture`);
 	}
 
 	logoutWithFacebook(): void {
