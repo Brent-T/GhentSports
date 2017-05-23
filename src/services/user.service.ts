@@ -42,6 +42,6 @@ export class UserService {
 	}
 
 	logoutWithFacebook(): void {
-		this.facebookService.logout().then(() => console.log('Logged out!'));
+		this.facebookService.logout().then(() => this.user.next(new User()));
 	}
 }
