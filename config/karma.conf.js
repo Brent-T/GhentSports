@@ -1,7 +1,8 @@
-var webpackConfig = require('./webpack.test');
+const webpackConfig = require('./webpack.test');
+const singleRun = process.env.CIRCLECI || false;
 
 module.exports = function (config) {
-	var _config = {
+	const _config = {
 		basePath: '',
 
 		frameworks: ['jasmine'],
@@ -30,7 +31,7 @@ module.exports = function (config) {
 		logLevel: config.LOG_INFO,
 		autoWatch: true,
 		browsers: ['Chrome'],
-		singleRun: true
+		singleRun: singleRun
 	};
 
 	config.set(_config);
