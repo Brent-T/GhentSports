@@ -1,4 +1,6 @@
 const webpackConfig = require('./webpack.test');
+
+// Check if tests run in CircleCI env => only singleRun required
 const singleRun = process.env.CIRCLECI || false;
 
 module.exports = function (config) {
