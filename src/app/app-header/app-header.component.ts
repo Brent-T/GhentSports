@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { UserService } from './../../services/user.service';
 
@@ -11,15 +11,16 @@ import { User } from './../../models/user';
 	providers: [UserService]
 })
 
-export class AppHeader {
+export class AppHeader implements OnInit {
 	public currentUser: User;
 	public userLoggedIn: boolean;
 
-	constructor(private userService: UserService) {
-		this.userLoggedIn = false;
+	constructor(private userService: UserService) { }
+
+	ngOnInit() {
 		this.userService.user.subscribe((user) => {
+			this.userLoggedIn = this.userService.userLoggedIn();
 			this.currentUser = user;
-			this.userLoggedIn = userService.userLoggedIn();
 		});
 	}
 

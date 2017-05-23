@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Xml2JsonService {
-	constructor() {}
-
 	convert(xml:Node) {		
 		let obj = {};
 

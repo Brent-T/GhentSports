@@ -13,9 +13,7 @@ export class SportsService {
 		new Sport(5, 'Fitness', require('./../../assets/sport-icons/fitness.png'), SportCategory.Fitness),
 		new Sport(6, 'Skate', require('./../../assets/sport-icons/skate.png'), SportCategory.Skate),
 		new Sport(7, 'Volleyball', require('./../../assets/sport-icons/volleyball.png'), SportCategory.Volleyball),
-	];;
-
-	constructor() {}
+	];
 
 	getSports(): Sport[] {
 		return this.sports;
