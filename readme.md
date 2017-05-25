@@ -1,6 +1,6 @@
 # GhentSports
 
-<div style="text-align:center; margin: 30px auto;"><img src="assets/logo/medal.png" alt="Medal icon" /></div>
+<div style="text-align: center; margin: 30px auto;"><img src="assets/logo/medal.png" alt="Medal icon" /></div>
 
 Find the best spots in Ghent to work out, have a run or exercise.
 
