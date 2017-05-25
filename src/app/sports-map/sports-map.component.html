@@ -1,14 +1,19 @@
 <sebm-google-map
 	[latitude]="lat || centerLat"
 	[longitude]="long || centerLng"
-	[zoom]="zoom || defaultZoom"
-	(mapClick)="mapClicked($event)">
+	[zoom]="zoom || defaultZoom">
 	<sebm-google-map-marker
 		[latitude]="51.0543"
-		[longitude]="3.7174"
-		[title]="'M'">
+		[longitude]="3.7174">
+		<div *ngFor="let location of locations">
+	      <sebm-google-map-marker
+	        *ngIf="location.geo"
+	        [latitude]="location.geo.lat"
+	        [longitude]="location.geo.long">
+	      </sebm-google-map-marker>
+	    </div>
 		<sebm-google-map-info-window [disableAutoPan]="true">
-				 Hi, this is the content of the <strong>info window</strong>
-			 </sebm-google-map-info-window>
+			Hi, this is the content of the <strong>info window</strong>
+		</sebm-google-map-info-window>
 	</sebm-google-map-marker>
 </sebm-google-map>
