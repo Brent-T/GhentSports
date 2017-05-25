@@ -1,22 +1,6 @@
 <h1>{{ sport.name }}</h1>
 
-<sebm-google-map
-  [latitude]="51.0543 || centerLat"
-  [longitude]="3.7174 || centerLng"
-  [zoom]="12"
-  (mapClick)="mapClicked($event)">
-  <sebm-google-map-marker
-    [latitude]="51.0543"
-    [longitude]="3.7174"
-    [title]="'M'">
-    <sebm-google-map-info-window [disableAutoPan]="true">
-         Hi, this is the content of the <strong>info window</strong>
-       </sebm-google-map-info-window>
-  </sebm-google-map-marker>
-</sebm-google-map>
-
 <sports-map></sports-map>
-
 
 <ul class="locations__list">
 	<li class="locations__item" *ngFor="let location of locations">{{ location.name }}</li>

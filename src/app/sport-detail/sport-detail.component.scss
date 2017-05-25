@@ -1,14 +1,16 @@
 :host {
+	sports-map {
+		display: block;
+		width: 50%;
+		height: 400px;
+		margin: 25px 0;
+	}
+
 	.locations__list {
 		padding: 0;
 	}
 
 	.locations__item {
 		list-style-type: none;
-	}
-
-	sebm-google-map {
-	  width: 50%;
-	  height: 400px;
 	}
 }
