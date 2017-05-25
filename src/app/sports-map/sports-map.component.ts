@@ -17,9 +17,5 @@ export class SportsMap {
 	// Sports to display
 	@Input() locations: Location[];
 
-	constructor() {
-		setInterval(() => {
-			console.log('locations', this.locations);
-		}, 10000);
-	}
+	constructor() { }
 }
