@@ -1,6 +1,13 @@
+@import './../../styles/partials/variables';
+
 :host {
-	sebm-google-map {
+	.sportsMap {
 		width: 100%;
 		height: 100%;
+
+		.marker__text {			
+			color: $c_black;
+			font-weight: $t_font-weight_bold;
+		}
 	}
 }
