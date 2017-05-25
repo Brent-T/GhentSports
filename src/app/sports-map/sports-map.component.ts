@@ -30,6 +30,7 @@ export class SportsMap implements OnInit {
 				const coords = position.coords;
 				this.lat = coords.latitude;
 				this.long = coords.longitude;
-			});
+			})
+			.catch((error) => console.log('Geolocation error', error));
 	}
 }
