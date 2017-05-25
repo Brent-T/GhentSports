@@ -1,21 +1,35 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { GeolocationService } from './../../services/geolocation.service';
 
 import { Location } from './../../models/location';
 
 @Component({
 	selector: 'sports-map',
 	templateUrl: './sports-map.component.html',
-	styleUrls: ['./sports-map.component.scss']
+	styleUrls: ['./sports-map.component.scss'],
+	providers: [GeolocationService]
 })
 
-export class SportsMap {
+export class SportsMap implements OnInit {
 	// Default center Ghent coordinates.
-	centerLat: number = 51.0543;
-	centerLng: number = 3.7174;
-	defaultZoom: number = 12;
+	public lat: number = null;
+	public long: number = null;
+	public centerLat: number = 51.0543;
+	public centerLong: number = 3.7174;
+	public defaultZoom: number = 12;
 
 	// Sports to display
 	@Input() locations: Location[];
 
-	constructor() { }
+	constructor(private geolocationService: GeolocationService) { }
+
+	ngOnInit() {
+		this.geolocationService.getCurrentLocation()
+			.then((position) => {
+				const coords = position.coords;
+				this.lat = coords.latitude;
+				this.long = coords.longitude;
+			});
+	}
 }

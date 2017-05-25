@@ -13,6 +13,7 @@ import { LoopRoutesService } from './../services/looproutes.service';
 import { BuurtsportLocatiesService } from './../services/buurtsportlocaties.service';
 import { ParksService } from './../services/parks.service';
 import { Xml2JsonService } from './../services/xml2json.service';
+import { GeolocationService } from './../services/geolocation.service';
 
 import { AppHeader } from './app-header/app-header.component';
 import { SportsOverview } from './sports-overview/sports-overview.component';
@@ -38,7 +39,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		SportDetail,
 		SportsMap,
 		Spinner,
-		PageNotFound
+		PageNotFound,
 	],
 	providers: [
 		SportsService,
@@ -46,7 +47,8 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		LoopRoutesService,
 		BuurtsportLocatiesService,
 		ParksService,
-		Xml2JsonService
+		Xml2JsonService,
+		GeolocationService,
 	],
 	bootstrap: [ AppComponent ]
 })

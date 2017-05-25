@@ -1,7 +1,7 @@
 <sebm-google-map
 	class="sportsMap"
 	[latitude]="lat || centerLat"
-	[longitude]="long || centerLng"
+	[longitude]="long || centerLong"
 	[zoom]="zoom || defaultZoom">
 	<div *ngFor="let location of locations">
 		<sebm-google-map-marker
