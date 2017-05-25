@@ -1,9 +1,12 @@
 <h1>{{ sport.name }}</h1>
 
-<sports-map [locations]="locations"></sports-map>
+<div class="locations__loading" *ngIf="locations.length === 0">
+	<spinner></spinner>	
+</div>
 
-<ul class="locations__list">
-	<li class="locations__item" *ngFor="let location of locations">{{ location.name }}</li>
-</ul>
-
-<spinner *ngIf="locations.length === 0"></spinner>
+<div class="locations__loaded" *ngIf="locations.length !== 0">
+	<sports-map class="locations__map" [locations]="locations"></sports-map>
+	<ul class="locations__list">
+		<li class="locations__item" *ngFor="let location of locations">{{ location.name }}</li>
+	</ul>
+</div>
