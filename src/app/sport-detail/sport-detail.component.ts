@@ -33,4 +33,8 @@ export class SportDetail implements OnInit {
 			this.locations = data;
 		});
 	}
+
+	mapClicked(e: any) {
+		console.log('hy');
+	}
 }

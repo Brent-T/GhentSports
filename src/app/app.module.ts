@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 import { FacebookModule } from 'ngx-facebook';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,7 @@ import { AppHeader } from './app-header/app-header.component';
 import { SportsOverview } from './sports-overview/sports-overview.component';
 import { SportItem } from './sport-item/sport-item.component';
 import { SportDetail } from './sport-detail/sport-detail.component';
+import { SportsMap } from './sports-map/sports-map.component';
 import { Spinner } from './spinner/spinner.component';
 import { PageNotFound } from './page-not-found/page-not-found.component';
 
@@ -25,7 +27,8 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		AppRoutingModule,
 		BrowserModule,
 		HttpModule,
-		FacebookModule.forRoot()
+		FacebookModule.forRoot(),
+		AgmCoreModule.forRoot({ apiKey: 'AIzaSyBnKEhQeu22y99AZMnw7FQecRsqzV1UT-g' }),
 	],
 	declarations: [
 		AppComponent,
@@ -33,6 +36,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		SportsOverview,
 		SportItem,
 		SportDetail,
+		SportsMap,
 		Spinner,
 		PageNotFound
 	],
