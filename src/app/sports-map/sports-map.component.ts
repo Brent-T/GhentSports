@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Sport } from './../../models/sport';
+import { Location } from './../../models/location';
 
 @Component({
 	selector: 'sports-map',
@@ -9,9 +9,13 @@ import { Sport } from './../../models/sport';
 })
 
 export class SportsMap {
-	@Input() sports: Sport[];
+	// Default center Ghent coordinates.
+	centerLat: number = 51.0543;
+	centerLng: number = 3.7174;
+	defaultZoom: number = 12;
 
-	constructor() {
-		console.log('sports', this.sports);
-	}
+	// Sports to display
+	@Input() locations: Location[];
+
+	constructor() { }
 }

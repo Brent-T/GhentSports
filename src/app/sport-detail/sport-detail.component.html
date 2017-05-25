@@ -1,6 +1,6 @@
 <h1>{{ sport.name }}</h1>
 
-<sports-map></sports-map>
+<sports-map [locations]="locations"></sports-map>
 
 <ul class="locations__list">
 	<li class="locations__item" *ngFor="let location of locations">{{ location.name }}</li>
