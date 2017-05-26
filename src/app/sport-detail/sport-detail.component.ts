@@ -44,6 +44,10 @@ export class SportDetail implements OnInit {
 				const coords = position.coords;
 				this.lat = coords.latitude;
 				this.long = coords.longitude;
+				this.geolocationService.getClosestLocations(this.locations)
+					.then((locations) => {
+						this.locations = locations;
+					});
 			})
 			.catch((error) => console.log('Geolocation error', error));
 	}

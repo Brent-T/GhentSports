@@ -25,10 +25,10 @@ export class GeolocationService {
 		return new Promise((resolve, reject) => {
 			this.getCurrentLocation()
 				.then((pos) => {
-
+					resolve(locations.slice(0, maxLocations));
 				})
 				.catch(() => {
-					reject(locations.slice(0, maxLocations));
+					resolve(locations.slice(0, maxLocations));
 				});
 		});
 	}
