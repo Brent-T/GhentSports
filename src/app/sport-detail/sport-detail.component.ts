@@ -53,7 +53,7 @@ export class SportDetail implements OnInit {
 			.catch((error) => console.log('Geolocation error', error));
 	}
 
-	filterLocationsOnCurrentLocation(position: any, maxLocations: number = 6) {
+	filterLocationsOnCurrentLocation(position: any, maxLocations: number = 10) {
 		this.locations.forEach((location) => {
 			const distance = this.calculateDistanceGPSCoordinates(position, location.geo);
 			location.distance = Math.round(distance*100) / 100.0;
@@ -61,6 +61,7 @@ export class SportDetail implements OnInit {
 		this.locations = this.locations.sort(this.compare).slice(0, maxLocations);
 	}
 
+	// Make this a static function of Location
 	compare(a: Location, b: Location): number {
 		if (a.distance < b.distance)
 			return -1;

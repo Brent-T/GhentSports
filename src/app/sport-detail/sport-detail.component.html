@@ -9,7 +9,7 @@
 	<ul class="locations__list">
 		<li class="locations__item" *ngFor="let location of locations">
 			<p>{{ location.name }}</p>
-			<p>{{ location.distance }}</p>
+			<p *ngIf="location.distance">{{ location.distance }}km</p>
 		</li>
 	</ul>
 	<button class="button button__currentLocation button--primary" (click)="findCurrentLocation()">Find my location</button>
