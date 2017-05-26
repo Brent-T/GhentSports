@@ -36,6 +36,7 @@ export class SportDetail implements OnInit {
 		this.sportLocationsSerivce.getLocations(this.sport.cat).then((data: Location[]) => {
 			this.locations = data;
 		});
+
 	}
 
 	findCurrentLocation() {
@@ -44,11 +45,44 @@ export class SportDetail implements OnInit {
 				const coords = position.coords;
 				this.lat = coords.latitude;
 				this.long = coords.longitude;
-				this.geolocationService.getClosestLocations(this.locations)
-					.then((locations) => {
-						this.locations = locations;
-					});
+
+				this.filterLocationsOnCurrentLocation(
+					{ lat: coords.latitude, long: coords.longitude }
+				);
 			})
 			.catch((error) => console.log('Geolocation error', error));
+	}
+
+	filterLocationsOnCurrentLocation(position: any, maxLocations: number = 6) {
+		this.locations.forEach((location) => {
+			const distance = this.calculateDistanceGPSCoordinates(position, location.geo);
+			location.distance = Math.round(distance*100) / 100.0;
+		});
+		this.locations = this.locations.sort(this.compare).slice(0, maxLocations);
+	}
+
+	compare(a: Location, b: Location): number {
+		if (a.distance < b.distance)
+			return -1;
+		if (a.distance > b.distance)
+			return 1;
+		return 0;
+	}
+
+	calculateDistanceGPSCoordinates(point1: any, point2: any) {
+		const earthRadiusKm: number = 6371;
+		const dLat = this.degreesToRadians(point2.lat - point1.lat);
+		const dLon = this.degreesToRadians(point2.long - point1.long);
+
+		const p1LatRadian = this.degreesToRadians(point1.lat);
+		const p2LatRadian = this.degreesToRadians(point2.lat);
+
+		const a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(p1LatRadian) * Math.cos(p2LatRadian); 
+		const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		return earthRadiusKm * c;
+	}
+
+	degreesToRadians(degrees: number) {
+		return degrees * Math.PI / 180;
 	}
 }

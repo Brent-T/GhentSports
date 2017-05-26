@@ -7,7 +7,10 @@
 <div class="locations__loaded" *ngIf="locations.length !== 0">
 	<sports-map class="locations__map" [locations]="locations" [lat]="lat" [long]="long"></sports-map>
 	<ul class="locations__list">
-		<li class="locations__item" *ngFor="let location of locations">{{ location.name }}</li>
+		<li class="locations__item" *ngFor="let location of locations">
+			<p>{{ location.name }}</p>
+			<p>{{ location.distance }}</p>
+		</li>
 	</ul>
 	<button class="button button__currentLocation button--primary" (click)="findCurrentLocation()">Find my location</button>
 </div>
