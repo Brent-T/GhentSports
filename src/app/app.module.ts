@@ -48,7 +48,6 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		BuurtsportLocatiesService,
 		ParksService,
 		Xml2JsonService,
-		GeolocationService,
 	],
 	bootstrap: [ AppComponent ]
 })
