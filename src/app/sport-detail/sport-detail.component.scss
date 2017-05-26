@@ -1,3 +1,5 @@
+@import './../../styles/partials/variables';
+
 :host {
 	.locations__loaded {
 		margin: 25px 0;
@@ -11,6 +13,8 @@
 		}
 
 		.locations__list {
+			display: flex;
+			flex-wrap: wrap;
 			float: right;
 			width: 47.5%;
 			height: 100%;
@@ -18,7 +22,12 @@
 			overflow-y: scroll;
 
 			.locations__item {
-				list-style-type: none;
+				width: 48%;
+				padding: 10px;
+				margin: 1%;
+				color: $c_black;
+				background-color: $c_white;
+			    box-shadow: 1px 1px 3px #333;
 			}
 		}
 	}
