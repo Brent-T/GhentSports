@@ -18,6 +18,10 @@
 	transition-duration: $a_duration_default;
 }
 
+.button--small {
+	padding: 5px 12px;
+}
+
 .button--primary {
 	color: $c_white;
 	background-color: $c_secondary;

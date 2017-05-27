@@ -12,7 +12,7 @@ export class SportsMap {
 	// Default center Ghent coordinates.
 	public centerLat: number = 51.0543;
 	public centerLong: number = 3.7174;
-	public defaultZoom: number = 12;
+	public defaultZoom: number = 14;
 
 	// Sports to display
 	@Input() lat: number;

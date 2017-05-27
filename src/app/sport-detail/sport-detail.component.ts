@@ -86,4 +86,9 @@ export class SportDetail implements OnInit {
 	degreesToRadians(degrees: number) {
 		return degrees * Math.PI / 180;
 	}
+
+	showLocationOnMap(location: Location) {
+		this.lat = location.geo.lat;
+		this.long = location.geo.long;
+	}
 }
