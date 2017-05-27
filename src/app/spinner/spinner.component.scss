@@ -1,11 +1,13 @@
 :host {
-	.spinner__img {
+	.spinner__icon {
 		position: absolute;
 		top: 50%;
+		margin-top: -25px; /* = height / 2 */
 		left: 50%;
+		margin-left: -25px; /* = width / 2 */
 		transform: translate(-50%, -50%);
 
-		max-width: 75px;
-		max-height: 75px;
+		max-width: 50px;
+		max-height: 50px;
 	}
 }
