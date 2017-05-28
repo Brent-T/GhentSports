@@ -1,7 +1,17 @@
+@import './../../styles/partials/variables';
+
 :host {
 	sport-item {
 		display: inline-block;
 		width: 30%;
 		margin: 1.5%;
+
+		@media screen and (max-width: $br-large) {
+			width: 47%;
+		}
+
+		@media screen and (max-width: $br-small) {
+			width: 97%;
+		}
 	}
 }
