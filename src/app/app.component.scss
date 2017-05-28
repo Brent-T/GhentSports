@@ -5,4 +5,8 @@ my-app {
 	max-width: 720px;
 	margin: 0 auto;
 	margin-top: 25px;
+
+	@media screen and (max-width: $br-xlarge) {
+		width: 90%;
+	}
 }

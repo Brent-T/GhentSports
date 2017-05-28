@@ -9,6 +9,10 @@
 	margin-bottom: 25px;
 	text-align: left;
 
+	@media screen and (max-width: $br-xlarge) {
+		width: 100%;
+	}
+
 	@media screen and (max-width: $br-large) {
 		height: 100px;
 		text-align: center;
