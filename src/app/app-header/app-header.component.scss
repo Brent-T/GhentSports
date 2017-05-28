@@ -9,20 +9,38 @@
 	margin-bottom: 25px;
 	text-align: left;
 
+	@media screen and (max-width: $br-large) {
+		height: 100px;
+		text-align: center;
+	}
+
 	.header__title {
 		float: left;
 		cursor: pointer;
+
+		@media screen and (max-width: $br-large) {
+			margin-bottom: 25px;
+			float: none;
+		}
 	}
 
 	.header__loggedOut {
 		float: right;
+
+		@media screen and (max-width: $br-large) {
+			float: none;
+		}
 	}
 
 	.header__loggedIn {
-		float: right;
+		display: flex;
+		justify-content: flex-end;
+
+		@media screen and (max-width: $br-large) {
+			justify-content: center;
+		}
 
 		.header__profilePicture {
-			float: left;
 			height: 40px;
 			width: 40px;
 			margin-right: 10px;
@@ -37,7 +55,6 @@
 		}
 
 		.header__username {
-			display: inline-block;
 			margin-right: 10px;
 		}
 	}
