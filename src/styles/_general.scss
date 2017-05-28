@@ -23,6 +23,11 @@ h1 {
     font-size: $t_font-size_xxlarge;
 }
 
+a {
+    text-decoration: none;
+    color: $c_white;
+}
+
 footer {
     font-size: $t_font-size_smaller;
 }

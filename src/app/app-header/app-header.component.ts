@@ -12,6 +12,7 @@ import { User } from './../../models/user';
 })
 
 export class AppHeader implements OnInit {
+	public title: string = "GhentSports";
 	public currentUser: User;
 	public userLoggedIn: boolean;
 
