@@ -1,16 +1,14 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { FacebookService, InitParams, LoginResponse, AuthResponse } from 'ngx-facebook';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { User } from './../models/user';
 
 @Injectable()
-export class UserService implements OnInit {
+export class UserService {
 	public user: BehaviorSubject<User> = new BehaviorSubject<User>(new User());
 
-	constructor(private facebookService: FacebookService) { }
-
-	ngOnInit() {
+	constructor(private facebookService: FacebookService) {
 		let initParams: InitParams = {
 			appId: '245676659169679',
 			xfbml: true,
