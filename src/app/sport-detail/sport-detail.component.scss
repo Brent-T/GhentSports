@@ -42,6 +42,10 @@
 			    box-shadow: 1px 1px 3px #333;
 			    overflow: hidden;
 
+			    @media screen and (max-width: $br-medium) {
+					width: 100%;
+				}
+
 			    .location__name {
 					white-space: nowrap;
 					overflow: hidden;
