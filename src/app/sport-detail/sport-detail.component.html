@@ -5,6 +5,7 @@
 </div>
 
 <div class="locations__loaded" *ngIf="locations.length !== 0">
+	<button class="button button__currentLocation button--primary" (click)="findCurrentLocation()"> Find my location</button>
 	<sports-map class="locations__map" [locations]="locations" [lat]="lat" [long]="long"></sports-map>
 	<ul class="locations__list">
 		<li class="locations__item" *ngFor="let location of locations">
@@ -13,5 +14,4 @@
 			<button class="button button--primary button--small location__mapButton" (click)="showLocationOnMap(location)"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
 		</li>
 	</ul>
-	<button class="button button__currentLocation button--primary" (click)="findCurrentLocation()"> Find my location</button>
 </div>
