@@ -4,13 +4,13 @@
  */
 
 /* --- COLORS --- */
-$c_white: #FFF;
-$c_black: #000;
+$c_white: #FFF;             // White
+$c_black: #000;             // Black
 
 $c_primary: #1976D2;        // Denim-blue
 $c_secondary: #FFA726;      // Sunshade-orange
 $c_tertiary: #FFFFFF;       // White
-$c_accent: #000000;         // White
+$c_accent: #000000;         // Black
 
 /* --- TYPOGRAPHY - FONT-FAMILY -- */
 $t_font-family_default: 'Roboto', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
@@ -20,8 +20,8 @@ $t_font-size_xxlarge: 28px;
 $t_font-size_xlarge: 24px;
 $t_font-size_large: 20px;
 $t_font-size_medium: 16px;
-$t_font-size_small: 12px;
-$t_font-size_smaller: 10px;
+$t_font-size_small: 14px;
+$t_font-size_smaller: 12px;
 
 /* --- TYPOGRAPHY - FONT-WEIGHT -- */
 $t_font-weight_heavy: 900;

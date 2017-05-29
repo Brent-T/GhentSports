@@ -10,6 +10,7 @@
 	background-color: $c_white;
 	box-shadow: 1px 1px 10px #333;
 	text-align: left;
+	font-size: $t_font-size_small;
 	font-weight: $t_font-weight_light;
 
 	.activity__profilePicture {
@@ -36,6 +37,6 @@
 
 	.activity__time {
 		text-align: center;
-		font-size: $t_font-size_small;
+		font-size: $t_font-size_smaller;
 	}
 }
