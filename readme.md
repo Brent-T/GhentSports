@@ -15,6 +15,10 @@ This project can be found online on [https://ghentsports.herokuapp.com](https://
 The project can simply be started by using:
 
 ```
+npm install
+```
+
+```
 npm start
 ```
 
