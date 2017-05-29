@@ -18,6 +18,7 @@ import { GeolocationService } from './../services/geolocation.service';
 import { AppHeader } from './app-header/app-header.component';
 import { SportsOverview } from './sports-overview/sports-overview.component';
 import { SportItem } from './sport-item/sport-item.component';
+import { ActivityOverview } from './activity-overview/activity-overview.component';
 import { SportDetail } from './sport-detail/sport-detail.component';
 import { SportsMap } from './sports-map/sports-map.component';
 import { Spinner } from './spinner/spinner.component';
@@ -36,6 +37,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		AppHeader,
 		SportsOverview,
 		SportItem,
+		ActivityOverview,
 		SportDetail,
 		SportsMap,
 		Spinner,
