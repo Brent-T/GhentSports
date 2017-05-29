@@ -4,8 +4,10 @@
 	display: block;
 	margin-bottom: 25px;
 
-	button {
+	.button {
 		width: 150px;
+		padding-top: 5px; 
+		padding-bottom: 5px; 
 	}
 
 	.button__sports {
