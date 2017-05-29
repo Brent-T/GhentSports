@@ -1,3 +1,41 @@
-div {
-	
+@import './../../styles/partials/variables';
+
+:host {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	margin-bottom: 15px;
+	color: $c_black;
+	background-color: $c_white;
+	box-shadow: 1px 1px 10px #333;
+	text-align: left;
+	font-weight: $t_font-weight_light;
+
+	.activity__profilePicture {
+		height: 50px;
+		width: 50px;
+		margin-right: 15px;
+		border-radius: $d_border-radius_circle;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: auto;
+			min-height: 100%;
+		}
+	}
+
+	.activity__info {
+		flex-grow: 1;
+
+		.activity__name, .activity__location {
+			font-weight: $t_font-weight_medium;
+		}
+	}
+
+	.activity__time {
+		text-align: center;
+		font-size: $t_font-size_small;
+	}
 }

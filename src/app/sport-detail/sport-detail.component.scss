@@ -2,7 +2,7 @@
 
 :host {
 	.locations__loaded {
-		margin: 25px 0;		
+		margin: 25px 0;
 
 		.locations__map {
 			display: block;
@@ -54,7 +54,7 @@
 
 			    .location__distance {
 					font-size: $t_font-size_small;
-    				font-weight: $t_font-weight_light;
+    				font-weight: $t_font-weight_lighter;
 			    }
 
 			    .location__mapButton {

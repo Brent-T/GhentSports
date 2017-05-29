@@ -17,7 +17,6 @@ export class ActivityOverview implements OnInit {
 	ngOnInit() {
 		this.activityService.getActivities().then((data: any) => {
 			this.activities = data;
-			console.log('this', this.activities);
 		});
 	}
 }
