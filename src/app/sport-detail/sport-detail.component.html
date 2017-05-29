@@ -1,4 +1,7 @@
-<h1>{{ sport.name }}</h1>
+<div class="detail__header">
+	<img class="sport__img" src="{{ sport.icon }}" />
+	<h1 class="sport__title">{{ sport.name }}</h1>
+</div>
 
 <div class="locations__loading" *ngIf="locations.length === 0">
 	<spinner></spinner>	
