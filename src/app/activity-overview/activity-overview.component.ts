@@ -10,7 +10,7 @@ import { ActivityService } from './../../services/activity.service';
 })
 
 export class ActivityOverview implements OnInit {
-	public activities: any;
+	public activities: any = [];
 
 	constructor(private activityService: ActivityService) { }
 

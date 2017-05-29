@@ -16,6 +16,7 @@ import { Xml2JsonService } from './../services/xml2json.service';
 import { GeolocationService } from './../services/geolocation.service';
 
 import { AppHeader } from './app-header/app-header.component';
+import { AppNav } from './app-nav/app-nav.component';
 import { SportsOverview } from './sports-overview/sports-overview.component';
 import { SportItem } from './sport-item/sport-item.component';
 import { ActivityOverview } from './activity-overview/activity-overview.component';
@@ -36,6 +37,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 	declarations: [
 		AppComponent,
 		AppHeader,
+		AppNav,
 		SportsOverview,
 		SportItem,
 		ActivityOverview,

@@ -1,10 +1,18 @@
+@import './../../styles/partials/variables';
+
 :host {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	display: block;
+	margin-bottom: 25px;
 
 	button {
-		margin-top: 25px;
+		width: 150px;
+	}
+
+	.button__sports {
+		border-radius: $d_border-radius_rounded 0 0 $d_border-radius_rounded;
+	}
+
+	.button__activities {
+		border-radius: 0 $d_border-radius_rounded $d_border-radius_rounded 0;
 	}
 }

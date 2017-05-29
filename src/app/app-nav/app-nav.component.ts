@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'page-not-found',
-	templateUrl: './page-not-found.component.html',
-	styleUrls: ['./page-not-found.component.scss']
+	selector: 'app-nav',
+	templateUrl: './app-nav.component.html',
+	styleUrls: ['./app-nav.component.scss']
 })
 
-export class PageNotFound { }
+export class AppNav { }
