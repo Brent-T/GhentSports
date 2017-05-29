@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, ComponentFixtureAutoDetect } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
 
@@ -16,7 +17,8 @@ describe('AppHeader - title', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			declarations: [ AppHeader ],
+			imports: [RouterTestingModule],
+			declarations: [AppHeader],
 			providers: [
 				UserService,
 				FacebookService,
