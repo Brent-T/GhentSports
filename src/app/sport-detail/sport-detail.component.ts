@@ -5,10 +5,12 @@ import { SportsService } from './../../services/sports.service';
 import { SportLocationService } from './../../services/sportlocations.service';
 import { GeolocationService } from './../../services/geolocation.service';
 import { ActivityService } from './../../services/activity.service';
+import { UserService } from './../../services/user.service';
 
 import { SportCategory } from './../../models/enums';
 import { Sport } from './../../models/sport';
 import { Location } from './../../models/location';
+import { User } from './../../models/user';
 
 @Component({
 	selector: 'sport-detail',
@@ -22,8 +24,15 @@ export class SportDetail implements OnInit {
 	public locations: Location[] = [];
 	public lat: number = null;
 	public long: number = null;
+	public currentUser: User;
 
-	constructor(private route: ActivatedRoute, private sportsService: SportsService, private sportLocationsSerivce: SportLocationService, private geolocationService: GeolocationService, private activitiyService: ActivityService) { }
+	constructor(
+		private route: ActivatedRoute, 
+		private sportsService: SportsService, 
+		private sportLocationsSerivce: SportLocationService, 
+		private geolocationService: GeolocationService, 
+		private activitiyService: ActivityService, 
+		private userService: UserService) { }
 
 	ngOnInit() {
 		this.route.params.subscribe(params => {
@@ -31,6 +40,7 @@ export class SportDetail implements OnInit {
 			this.sport = this.sportsService.getSport(id);
 			this.getSportLocations();
 		});
+		this.userService.user.subscribe((user: User) => this.currentUser = user);
 	}
 
 	getSportLocations() {
