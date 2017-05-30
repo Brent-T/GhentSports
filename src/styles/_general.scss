@@ -6,28 +6,28 @@
 @import 'partials/variables';
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
 	font-family: $t_font-family_default;
-    font-size: $t_font-size_medium;
-    font-weight: $t_font-weight_medium;
+	font-size: $t_font-size_medium;
+	font-weight: $t_font-weight_medium;
 	text-align: center;
-    line-height: $t_line-height_default;
-    background-color: $c_primary;
-    color: $c_white;
+	line-height: $t_line-height_default;
+	background-color: $c_primary;
+	color: $c_white;
 }
 
 h1 {
-    font-size: $t_font-size_xxlarge;
+	font-size: $t_font-size_xxlarge;
 }
 
 a {
-    text-decoration: none;
-    color: $c_white;
+	text-decoration: none;
+	color: $c_white;
 }
 
 footer {
-    font-size: $t_font-size_smaller;
+	font-size: $t_font-size_smaller;
 }
