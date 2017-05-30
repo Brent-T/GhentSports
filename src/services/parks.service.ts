@@ -37,6 +37,11 @@ export class ParksService {
 		return placemark.map((data:any) => {
 			let park = {};
 			data['ExtendedData']['SchemaData']['SimpleData'].forEach((a:any) => park[a['@attributes'].name.toLowerCase()] = a['#text']);
+			
+			let polygon = data['Polygon'] || data['MultiGeometry']['Polygon'][0];
+			let polygon_coords = polygon['outerBoundaryIs']['LinearRing']['coordinates']['#text'];
+			let coords_string = polygon_coords.split(',0 ')[0].split(',');
+			park['location'] = { lat: +coords_string[1], long: +coords_string[0] };
 			return park;
 		});		
 	}
@@ -45,9 +50,8 @@ export class ParksService {
 		const id = json.id;
 		const name = json.objectnaam;
 		const sport = SportCategory.Running;
-		const sector = json.sector;
-		const surface = json.oppervlakt;
-		return new Location(id, name, sport, { sector, surface });
+		const location = json.location;
+		return new Location(id, name, sport, location);
 	}	
 
 	handleError(error: any) {

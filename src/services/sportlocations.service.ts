@@ -15,7 +15,7 @@ export class SportLocationService {
 	getLocations(sport: SportCategory): Promise<Location[]> {
 		switch (sport) {
 			case SportCategory.Running:
-				return this.loopRoutesService.getLoopRoutes();
+				return this.parksService.getParks();
 			case SportCategory.Basketball:
 			case SportCategory.Football:
 			case SportCategory.Pingpong:
@@ -24,7 +24,7 @@ export class SportLocationService {
 			case SportCategory.Volleyball:
 				return this.buurtsportLocatieService.getBuursportLocaties(sport);
 			default:
-				return this.parksService.getParks();
+				return this.loopRoutesService.getLoopRoutes();
 		}
 	}
 }
