@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { Activity } from './../../models/activity';
+
 @Component({
 	selector: 'activity-item',
 	templateUrl: './activity-item.component.html',
@@ -7,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ActivityItem { 
-	@Input() activity: any;
+	@Input() activity: Activity;
 }

@@ -3,7 +3,7 @@ import { User } from './user';
 
 export interface IActivity {
 	name: string;
-	sport: Sport;
+	sport: string;
 	location: string;
 	description: string;
 	user?: User;
