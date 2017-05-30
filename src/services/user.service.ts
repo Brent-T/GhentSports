@@ -6,7 +6,7 @@ import { User } from './../models/user';
 
 @Injectable()
 export class UserService {
-	public user: User = new User();
+	public user: BehaviorSubject<User> = new BehaviorSubject<User>(null);
 
 	constructor(private facebookService: FacebookService) {
 		let initParams: InitParams = {
@@ -26,8 +26,8 @@ export class UserService {
 						this.getUsername(userId),
 						this.getProfilePicture(userId),
 					]).then((response: any) => {
-						this.user = new User(response[0].id, response[0].name, response[1].data.url);
-						resolve(this.user);
+						this.user.next(new User(response[0].id, response[0].name, response[1].data.url));
+						resolve(this.user.value);
 					}).catch((error: any) => reject(error));	
 				})
 				.catch((error: any) => reject(error));			
@@ -43,10 +43,10 @@ export class UserService {
 	}
 
 	logoutWithFacebook(): void {
-		this.facebookService.logout().then(() => this.user = new User());
+		this.facebookService.logout().then(() => this.user.next(null));
 	}
 
 	getUser(): User {
-		return this.user;
+		return this.user.value;
 	}
 }

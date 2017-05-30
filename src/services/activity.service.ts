@@ -20,9 +20,11 @@ export class ActivityService {
 	}
 
 	addActivity(activity: any): void {
-		console.log('activity', activity);
 		const user = this.userService.getUser();
-		console.log('user', user);
+		activity.user_name = user.name;
+		activity.user_picture = user.picture;
+
+		this.http.post(this.apiUrl + 'activity', activity);
 	}
 
 	handleError(error: any) {
