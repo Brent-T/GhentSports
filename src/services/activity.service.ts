@@ -18,7 +18,7 @@ export class ActivityService {
 						.toPromise()
 						.then(response => {
 							return response.json()
-										   .map((activity: any) => this.convertToActivity(activity));
+										   .map((a: any) => this.convertToActivity(a));
 						})
 						.catch(this.handleError);
 	}
