@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { SportsService } from './../services/sports.service';
 import { SportLocationService } from './../services/sportlocations.service';
-import { LoopRoutesService } from './../services/looproutes.service';
 import { BuurtsportLocatiesService } from './../services/buurtsportlocaties.service';
 import { ParksService } from './../services/parks.service';
 import { Xml2JsonService } from './../services/xml2json.service';
@@ -59,7 +58,6 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 	providers: [
 		SportsService,
 		SportLocationService,
-		LoopRoutesService,
 		BuurtsportLocatiesService,
 		ParksService,
 		Xml2JsonService,

@@ -49,7 +49,6 @@ export class SportDetail implements OnInit {
 	getSportLocations() {
 		this.sportLocationsSerivce.getLocations(this.sport.cat).then((data: Location[]) => {
 			this.locations = data;
-			console.log('test', this.locations);
 		});
 
 	}

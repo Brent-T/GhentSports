@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/toPromise';
 
-import { LoopRoutesService } from './looproutes.service';
 import { BuurtsportLocatiesService } from './buurtsportlocaties.service';
 import { ParksService } from './parks.service';
 
@@ -10,7 +8,7 @@ import { Location } from './../models/location';
 
 @Injectable()
 export class SportLocationService {
-	constructor(private parksService: ParksService, private buurtsportLocatieService: BuurtsportLocatiesService, private loopRoutesService: LoopRoutesService) {}
+	constructor(private parksService: ParksService, private buurtsportLocatieService: BuurtsportLocatiesService) {}
 
 	getLocations(sport: SportCategory): Promise<Location[]> {
 		switch (sport) {
@@ -23,8 +21,6 @@ export class SportLocationService {
 			case SportCategory.Skate:
 			case SportCategory.Volleyball:
 				return this.buurtsportLocatieService.getBuursportLocaties(sport);
-			default:
-				return this.loopRoutesService.getLoopRoutes();
 		}
 	}
 }
