@@ -1,6 +1,9 @@
 @import './../../styles/partials/variables';
 
 :host {
+	border-radius: $d_border-radius_rounded;
+	overflow: hidden;
+	
 	.sportsMap {
 		width: 100%;
 		height: 100%;
