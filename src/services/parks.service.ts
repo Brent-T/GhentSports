@@ -18,7 +18,8 @@ export class ParksService {
 		return this.http.get(this.parksUrl, { headers: headers })
 						.toPromise()
 						.then(response => {
-							const parks = this.convertResponseToJSON(response.text());
+							const parks = this.convertResponseToJSON(response.text())
+								.filter((p: any) => p.oppervlakt > 11000);
 							return parks.map((p: any) => this.convertToLocation(p));
 						})
 						.catch(this.handleError);
