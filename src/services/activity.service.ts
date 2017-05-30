@@ -19,12 +19,17 @@ export class ActivityService {
 						.catch(this.handleError);
 	}
 
-	addActivity(activity: any): void {
+	addActivity(activity: any): Promise<any> {
 		const user = this.userService.getUser();
 		activity.user_name = user.name;
 		activity.user_picture = user.picture;
 
-		this.http.post(this.apiUrl + 'activity', activity);
+		return this.http.post(this.apiUrl + 'activity', activity)
+			.toPromise()
+			.then((response: any) => {
+				return response;
+			})
+			.catch(this.handleError);
 	}
 
 	handleError(error: any) {

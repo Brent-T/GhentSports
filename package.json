@@ -11,6 +11,7 @@
     "@types/jasmine": "2.5.36",
     "@types/node": "^6.0.45",
     "angular2-google-maps": "^0.17.0",
+    "angular2-modal": "^2.0.3",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.4",
     "core-js": "^2.4.1",

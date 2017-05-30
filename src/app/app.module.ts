@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { FacebookModule } from 'ngx-facebook';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +27,7 @@ import { ActivityOverview } from './activity-overview/activity-overview.componen
 import { ActivityItem } from './activity-item/activity-item.component';
 import { SportDetail } from './sport-detail/sport-detail.component';
 import { SportsMap } from './sports-map/sports-map.component';
+import { ShareModal } from './share-modal/share-modal.component';
 import { Spinner } from './spinner/spinner.component';
 import { PageNotFound } from './page-not-found/page-not-found.component';
 
@@ -31,9 +35,12 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 	imports: [
 		AppRoutingModule,
 		BrowserModule,
+		FormsModule,
 		HttpModule,
 		FacebookModule.forRoot(),
 		AgmCoreModule.forRoot({ apiKey: 'AIzaSyBnKEhQeu22y99AZMnw7FQecRsqzV1UT-g' }),
+		ModalModule.forRoot(),
+		BootstrapModalModule,
 	],
 	declarations: [
 		AppComponent,
@@ -45,6 +52,7 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		ActivityItem,
 		SportDetail,
 		SportsMap,
+		ShareModal,
 		Spinner,
 		PageNotFound,
 	],
@@ -58,7 +66,8 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		GeolocationService,
 		UserService,
 	],
-	bootstrap: [ AppComponent ]
+	bootstrap: [ AppComponent ],
+	entryComponents: [ ShareModal ]
 })
 
 export class AppModule { }

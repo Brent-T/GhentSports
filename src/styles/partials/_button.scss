@@ -34,3 +34,15 @@
 	background-color: $c_white;
 	border-color: $c_secondary;
 }
+
+.button--primary--invert {
+	color: $c_secondary;
+	background-color: $c_white;
+	border-color: $c_secondary;
+}
+
+.button--primary--invert:hover {
+	color: $c_white;
+	background-color: $c_secondary;
+	border-color: $c_white;	
+}

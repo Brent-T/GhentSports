@@ -1,0 +1,47 @@
+@import './../../styles/partials/variables';
+
+:host {
+	width: 90%;
+	max-width: 500px;
+	color: $c_black;
+	background-color: $c_white;
+	box-shadow: 1px 1px 10px #333;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	.shareModal__header {
+		padding: 10px 0;
+		color: $c_white;
+		background-color: $c_primary;		
+	}
+
+	.shareModal__content {
+		text-align: left;
+		margin: 15px 0;
+		padding: 0 15px;
+		
+		.shareModal__name {
+			margin-bottom: 10px;
+		}
+
+		.shareModal__name, .shareModal__description {
+			label {
+				display: block;
+			}
+
+			input {
+				width: 100%;
+				border-radius: $d_border-radius_rounded;
+			    border: 1px solid #BBB;
+    			padding: 5px;
+			}			
+		}
+	}
+
+	.shareModal__footer {
+		padding: 0 15px 15px 15px;
+	}
+}
