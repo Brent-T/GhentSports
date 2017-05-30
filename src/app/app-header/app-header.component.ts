@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { UserService } from './../../services/user.service';
 
@@ -11,25 +11,22 @@ import { User } from './../../models/user';
 	providers: [UserService]
 })
 
-export class AppHeader implements OnInit {
+export class AppHeader {
 	public title: string = "GhentSports";
-	public currentUser: User;
-	public userLoggedIn: boolean;
+	public currentUser: User = null;
 
 	constructor(private userService: UserService) { }
 
-	ngOnInit() {
-		this.userService.user.subscribe((user) => {
-			this.userLoggedIn = this.userService.userLoggedIn();
-			this.currentUser = user;
-		});
-	}
-
 	onLoginClick() {
-		this.userService.loginWithFacebook();
+		this.userService.loginWithFacebook()
+			.then((user: User) => {				
+				this.currentUser = user
+			})
+			.catch(error => console.log('User login', error));
 	}
 
 	onLogoutClick() {
+		this.currentUser = null;
 		this.userService.logoutWithFacebook();
 	}
 }

@@ -1,6 +1,6 @@
 <h1 class="header__title"><a [routerLink]="'/'">{{ title }}</a></h1>
 
-<div class="header__loggedIn" *ngIf="userLoggedIn">
+<div class="header__loggedIn" *ngIf="currentUser !== null">
 	<div class="header__profilePicture">
 		<img src="{{ currentUser.picture }}" />
 	</div>
@@ -8,6 +8,6 @@
 	<button class="button button--primary" (click)="onLogoutClick()">Logout</button>
 </div>
 
-<div class="header__loggedOut" *ngIf="!userLoggedIn">
+<div class="header__loggedOut" *ngIf="currentUser === null">
 	<button class="button button--primary" (click)="onLoginClick()"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login</button>
 </div>

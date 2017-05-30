@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SportsService } from './../../services/sports.service';
 import { SportLocationService } from './../../services/sportlocations.service';
 import { GeolocationService } from './../../services/geolocation.service';
+import { ActivityService } from './../../services/activity.service';
 
 import { SportCategory } from './../../models/enums';
 import { Sport } from './../../models/sport';
@@ -13,7 +14,7 @@ import { Location } from './../../models/location';
 	selector: 'sport-detail',
 	templateUrl: './sport-detail.component.html',
 	styleUrls: ['./sport-detail.component.scss'],
-	providers: [GeolocationService]
+	providers: [GeolocationService, ActivityService]
 })
 
 export class SportDetail implements OnInit {
@@ -22,7 +23,7 @@ export class SportDetail implements OnInit {
 	public lat: number = null;
 	public long: number = null;
 
-	constructor(private route: ActivatedRoute, private sportsService: SportsService, private sportLocationsSerivce: SportLocationService, private geolocationService: GeolocationService) { }
+	constructor(private route: ActivatedRoute, private sportsService: SportsService, private sportLocationsSerivce: SportLocationService, private geolocationService: GeolocationService, private activitiyService: ActivityService) { }
 
 	ngOnInit() {
 		this.route.params.subscribe(params => {
@@ -90,5 +91,15 @@ export class SportDetail implements OnInit {
 	showLocationOnMap(location: Location) {
 		this.lat = location.geo.lat;
 		this.long = location.geo.long;
+	}
+
+	shareActivity(location: Location) {
+		const activity = {
+			name: 'bla',
+			description: 'test',
+			sport: this.sport.name,
+			location: location.name
+		}
+		this.activitiyService.addActivity(activity);
 	}
 }

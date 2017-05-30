@@ -14,6 +14,7 @@ import { BuurtsportLocatiesService } from './../services/buurtsportlocaties.serv
 import { ParksService } from './../services/parks.service';
 import { Xml2JsonService } from './../services/xml2json.service';
 import { GeolocationService } from './../services/geolocation.service';
+import { UserService } from './../services/user.service';
 
 import { AppHeader } from './app-header/app-header.component';
 import { AppNav } from './app-nav/app-nav.component';
@@ -54,6 +55,8 @@ import { PageNotFound } from './page-not-found/page-not-found.component';
 		BuurtsportLocatiesService,
 		ParksService,
 		Xml2JsonService,
+		GeolocationService,
+		UserService,
 	],
 	bootstrap: [ AppComponent ]
 })
