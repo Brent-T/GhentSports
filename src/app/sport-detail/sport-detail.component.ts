@@ -50,7 +50,6 @@ export class SportDetail implements OnInit {
 		this.sportLocationsSerivce.getLocations(this.sport.cat).then((data: Location[]) => {
 			this.locations = data;
 		});
-
 	}
 
 	findCurrentLocation() {

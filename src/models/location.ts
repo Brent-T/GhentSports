@@ -8,6 +8,14 @@ export class Location implements ILocation {
 		public id: string,
 		public name: string,
 		public sport: SportCategory,
-		public geo: any
+		public geo: any,
 	) {}
+
+	static compare(a: Location, b: Location): number {
+		if (a.distance < b.distance)
+			return -1;
+		if (a.distance > b.distance)
+			return 1;
+		return 0;
+	}
 }
