@@ -22,6 +22,20 @@
 	outline: none;
 }
 
+.button:disabled {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+	cursor: not-allowed;
+}
+
+.button:hover:disabled {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+	cursor: not-allowed;
+}
+
 .button--small {
 	font-size: $t_font-size_smaller;
 	padding: 5px 12px;

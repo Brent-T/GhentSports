@@ -36,7 +36,6 @@ export class ActivityService {
 
 	addActivity(activity: Activity): Promise<any> {
 		activity.user = this.userService.getUser();
-		console.log('test', activity);
 
 		return this.http.post(this.apiUrl + 'activity', activity.toJson())
 			.toPromise()

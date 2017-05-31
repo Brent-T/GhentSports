@@ -2,18 +2,20 @@
 	<h1>Share your activity</h1>
 </div>
 
-<div class="shareModal__content">
-	<div class="shareModal__name">
-		<label>Name:</label>
-		<input [(ngModel)]="activity_name" type="text"/>
+<form #formCtrl="ngForm">
+	<div class="shareModal__content">
+		<div class="shareModal__name">
+			<label>Name:</label>
+			<input name="activity_name" [(ngModel)]="activity_name" type="text" required/>
+		</div>
+		<div class="shareModal__description">
+			<label>Description:</label>		
+			<input name="activity_description" [(ngModel)]="activity_description" type="text" required/>
+		</div>	
 	</div>
-	<div class="shareModal__description">
-		<label>Description:</label>		
-		<input [(ngModel)]="activity_description" type="text"/>
-	</div>	
-</div>
 
-<div class="shareModal__footer">
-	<button class="button button--primary" (click)="onSubmit()">Share</button>
-	<button class="button button--primary--invert" (click)="onCancel()">Cancel</button>
-</div>
+	<div class="shareModal__footer">
+		<button class="button button--primary" [disabled]="!formCtrl.form.valid" (click)="onSubmit()">Share</button>
+		<button class="button button--primary--invert" (click)="onCancel()">Cancel</button>
+	</div>
+</form>
