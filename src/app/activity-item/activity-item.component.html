@@ -3,8 +3,8 @@
 </div>
 
 <div class="activity__info">
-	<p><span class="activity__username">{{ activity.user.name }}</span> is planning a <span class="activity__location">{{ activity.sport.toLowerCase() }}</span> activity</p>
-	<p><span class="activity__name">{{ activity.name }}</span> @ {{ activity.location }}</p>
+	<p class="activity__title"><span class="activity__username">{{ activity.user.name }}</span> is planning a <span class="activity__sport">{{ activity.sport.toLowerCase() }}</span> activity</p>
+	<p class="activity__location"><span class="activity__name">{{ activity.name }}</span> @ {{ activity.location }}</p>
 	<p class="activity__description">{{ activity.description }}</p>
 </div>
 

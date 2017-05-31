@@ -29,7 +29,6 @@ describe('AppHeader - title', () => {
 		});
 
 		fixture = TestBed.createComponent(AppHeader); // AppHeader component
-
 		comp = fixture.componentInstance; // AppHeader test instance
 
 		de_header_title = fixture.debugElement.query(By.css('.header__title'));
@@ -76,7 +75,6 @@ describe('AppHeader - login', () => {
 		});
 
 		fixture = TestBed.createComponent(AppHeader); // AppHeader component
-
 		comp = fixture.componentInstance; // AppHeader test instance
 		userService = fixture.debugElement.injector.get(UserService);
 
