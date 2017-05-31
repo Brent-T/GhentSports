@@ -8,14 +8,14 @@
 </div>
 
 <div class="locations__loaded" *ngIf="locations.length !== 0">
-	<button class="button button__currentLocation button--primary" (click)="findCurrentLocation()"> Find my location</button>
+	<button class="button button__currentLocation button--primary" (click)="findCurrentLocation()"><i class="fa fa-location-arrow" aria-hidden="true"></i> Find my location</button>
 	<sports-map class="locations__map" [locations]="locations" [lat]="lat" [long]="long"></sports-map>
 	<ul class="locations__list">
 		<li class="locations__item" *ngFor="let location of locations">
 			<p class="location__name">{{ location.name }}</p>
 			<p class="location__distance" *ngIf="location.distance">{{ location.distance }}km</p>
-			<button class="button button--primary button--small location__mapButton" (click)="showLocationOnMap(location)"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-			<button class="button button--primary button--small location__mapButton" *ngIf="currentUser !== null" (click)="shareActivity(location)"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+			<button class="button button--primary button--small location__mapButton" (click)="showLocationOnMap(location)"><i class="fa fa-map-marker" aria-hidden="true"></i> Show on map</button>
+			<button class="button button--primary button--small location__mapButton" *ngIf="currentUser !== null" (click)="shareActivity(location)"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</button>
 		</li>
 	</ul>
 </div>
