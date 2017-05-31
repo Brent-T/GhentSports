@@ -31,7 +31,8 @@ export class ActivityService {
 		const userid = json.user.id;	
 		const username = json.user.name;	
 		const userpicture = json.user.picture;	
-		return new Activity(name, sport, location, description, new User(userid, username, userpicture));
+		const date = json.date;	
+		return new Activity(name, sport, location, description, new User(userid, username, userpicture), date);
 	}
 
 	addActivity(activity: Activity): Promise<any> {

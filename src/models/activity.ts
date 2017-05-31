@@ -9,7 +9,8 @@ export class Activity implements IActivity {
 		public sport: string,
 		public location: string,
 		public description: string,
-		public user?: User
+		public user?: User,
+		public date?: string
 	) { }
 
 	toJson() {

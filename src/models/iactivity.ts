@@ -7,4 +7,5 @@ export interface IActivity {
 	location: string;
 	description: string;
 	user?: User;
+	date?: string;
 }
