@@ -5,18 +5,18 @@
 	margin-bottom: 25px;
 
 	@media screen and (max-width: $br-xlarge) {
-		width: 100%;
-	}
-
-	@media screen and (max-width: $br-large) {
-		height: 100px;
-		text-align: center;
+		display: block;
 	}
 
 	.header__info {
 		display: flex;
 		align-items: center;
 		flex-grow: 1;
+
+		@media screen and (max-width: $br-xlarge) {
+			justify-content: center;
+			margin-bottom: 15px;
+		}
 
 		.header__logo {
 			width: 100%;
@@ -29,18 +29,13 @@
 			a {
 				font-weight: $t_font-weight_bold;
 			}
-
-			@media screen and (max-width: $br-large) {
-				margin-bottom: 25px;
-				float: none;
-			}
 		}		
 	}
 
 
 	.header__loggedOut {
-		@media screen and (max-width: $br-large) {
-			float: none;
+		@media screen and (max-width: $br-xlarge) {
+			justify-content: center;
 		}
 	}
 
@@ -48,7 +43,7 @@
 		display: flex;
 		align-items: center;
 
-		@media screen and (max-width: $br-large) {
+		@media screen and (max-width: $br-xlarge) {
 			justify-content: center;
 		}
 
