@@ -19,6 +19,7 @@
 		margin-right: 15px;
 		border-radius: $d_border-radius_circle;
 		overflow: hidden;
+		flex-shrink: 0;
 
 		img {
 			width: 100%;
@@ -30,7 +31,7 @@
 	.activity__info {
 		flex-grow: 1;
 
-		.activity__name, .activity__location {
+		.activity__username, .activity__location, .activity__name {
 			font-weight: $t_font-weight_bold;
 		}
 
