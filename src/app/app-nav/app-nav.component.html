@@ -1,4 +1,12 @@
 <div class="button__container">
-	<button class="button button--primary--invert button__sports" [routerLink]="'/sports'">Sports</button>
-	<button class="button button--primary--invert button__activities" [routerLink]="'/activities'">Activities</button>
+	<button 
+		[ngClass]="{'button--primary': activeTab === 'sports', 'button--primary--invert': activeTab !== 'sports' }" 
+		class="button button--primary--invert button__sports" 
+		(click)="setCurrentTab('sports')" 
+		[routerLink]="'/sports'">Sports</button>
+	<button 
+		[ngClass]="{'button--primary': activeTab === 'activities', 'button--primary--invert': activeTab !== 'activities' }" 		
+		class="button button--primary--invert button__activities" 
+		(click)="setCurrentTab('activities')" 
+		[routerLink]="'/activities'">Activities</button>
 </div>

@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app-nav.component.scss']
 })
 
-export class AppNav { }
+export class AppNav { 
+	public isClassVisible: boolean = false;
+	public activeTab: string = "sports";
+
+	setCurrentTab(tabName: string) {
+		this.activeTab = tabName;
+	}
+}

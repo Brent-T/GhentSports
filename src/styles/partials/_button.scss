@@ -18,6 +18,10 @@
 	transition-duration: $a_duration_default;
 }
 
+.button:focus {
+	outline: none;
+}
+
 .button--small {
 	font-size: $t_font-size_smaller;
 	padding: 5px 12px;
