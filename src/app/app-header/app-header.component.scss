@@ -1,11 +1,8 @@
 @import './../../styles/partials/variables';
 
 :host {
-	display: block;
-	height: 40px;
-	line-height: 40px;
+	display: flex;
 	margin-bottom: 25px;
-	text-align: left;
 
 	@media screen and (max-width: $br-xlarge) {
 		width: 100%;
@@ -16,18 +13,32 @@
 		text-align: center;
 	}
 
-	.header__title {
-		float: left;
+	.header__info {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
 
-		@media screen and (max-width: $br-large) {
-			margin-bottom: 25px;
-			float: none;
+		.header__logo {
+			width: 100%;
+			height: auto;
+			max-width: 40px;
+			margin-right: 15px;
 		}
+
+		.header__title {
+			a {
+				font-weight: $t_font-weight_bold;
+			}
+
+			@media screen and (max-width: $br-large) {
+				margin-bottom: 25px;
+				float: none;
+			}
+		}		
 	}
 
-	.header__loggedOut {
-		float: right;
 
+	.header__loggedOut {
 		@media screen and (max-width: $br-large) {
 			float: none;
 		}
@@ -35,7 +46,7 @@
 
 	.header__loggedIn {
 		display: flex;
-		justify-content: flex-end;
+		align-items: center;
 
 		@media screen and (max-width: $br-large) {
 			justify-content: center;

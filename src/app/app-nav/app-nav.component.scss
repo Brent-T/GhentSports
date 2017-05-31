@@ -1,20 +1,24 @@
 @import './../../styles/partials/variables';
 
 :host {
-	display: block;
-	margin-bottom: 25px;
+	.button__container {		
+		display: flex;
+		justify-content: center;
+		margin-bottom: 25px;	
 
-	.button {
-		width: 150px;
-		padding-top: 5px; 
-		padding-bottom: 5px; 
-	}
+		.button {
+			width: 150px;
+			padding-top: 5px; 
+			padding-bottom: 5px; 
+		}
 
-	.button__sports {
-		border-radius: $d_border-radius_rounded 0 0 $d_border-radius_rounded;
-	}
+		.button__sports {
+			border-radius: $d_border-radius_rounded 0 0 $d_border-radius_rounded;
+		}
 
-	.button__activities {
-		border-radius: 0 $d_border-radius_rounded $d_border-radius_rounded 0;
+		.button__activities {
+			border-left: none;
+			border-radius: 0 $d_border-radius_rounded $d_border-radius_rounded 0;
+		}
 	}
 }

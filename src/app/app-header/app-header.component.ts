@@ -11,7 +11,8 @@ import { User } from './../../models/user';
 })
 
 export class AppHeader implements OnInit {
-	public title: string = "GhentSports";
+	public logo: any = require('./../../../assets/logo/medal.png');
+	public title: string = "GhentSports";	
 	public currentUser: User = null;
 
 	constructor(private userService: UserService) { }

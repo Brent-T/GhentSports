@@ -1,4 +1,7 @@
-<h1 class="header__title"><a [routerLink]="'/'">{{ title }}</a></h1>
+<div class="header__info">
+	<img class="header__logo" src="{{ logo }}" />
+	<h1 class="header__title"><a [routerLink]="'/'">{{ title }}</a></h1>	
+</div>
 
 <div class="header__loggedIn" *ngIf="currentUser !== null">
 	<div class="header__profilePicture">
